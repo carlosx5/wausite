@@ -1,0 +1,39 @@
+<style>
+    .calendar_menuDay_module .modal-box {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .calendar_menuDay_module .modal-box .border {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: 20px;
+        padding: 0 15px 15px;
+    }
+
+    .calendar_menuDay_module .modal-box .title {
+        display: flex;
+        margin: -10px 0;
+        padding: 0 10px;
+        color: var(--modal-title);
+        background-color: var(--modal-background);
+    }
+</style>
+
+<div class="modal-box">
+    <button class="btn-close"><i class="fas fa-times"></i></button>
+
+    <div class="border">
+        <div class="title"></div>
+
+        <button class="btn btn-primary mt-4 btnNewDoctor">Adicionar médico</button>
+        <button class="btn btn-primary mt-2 btnNewDoctor" disabled>Adicionar paciente</button>
+        <button class="btn btn-primary mt-2 btnNewDoctor" disabled>Ver agenda do dia</button>
+    </div>
+
+    <div class="text-center mt-3">
+        <button class="btn btn-secondary w-35 btnExit">Sair</button>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+#list .btnDel {
+    cursor: pointer;
+}
+
+#list input:focus {
+    border: 1px solid;
+}

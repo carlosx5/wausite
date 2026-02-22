@@ -1,0 +1,38 @@
+<!--+ Left -->
+<?=$this->include("templates/menuTopLeft.html")?>
+<!--+ Center -->
+<div class="center">
+    <div class="save-box">
+        <button class="btn btn-primary tab save" disabled>
+            <i class="fa-light fa-floppy-disk fa-lg"></i>
+            <span>Salvar</span>
+        </button>
+        <button class="btn btn-danger tab cancel" disabled>
+            <i class="fa-light fa-ban fa-lg"></i>
+            <span>Cancelar</span>
+        </button>
+    </div>
+</div>
+<!--+ Right -->
+<div class="right justifyEnd">
+    <button class="btn btn-group tab patient" data-tab="patient">
+        <i class="fa-light fa-address-card"></i>
+        <p>Cadastro</p>
+    </button>
+    <button class="btn btn-group tab osList" data-tab="osList" disabled>
+        <i class="fa-light fa-files-medical"></i>
+        <p>Serviços</p>
+    </button>
+    <button class="btn btn-group tab recordList" data-tab="recordList" disabled>
+        <i class="fa-light fa-clipboard-medical"></i>
+        <p>Prontuários</p>
+    </button>
+    <button class="btn btn-group tab archive" data-tab="archive" disabled>
+        <i class="fa-light fa-file-doc"></i>
+        <p>Arquivos</p>
+    </button>
+    <button class="btn btn-group tab financial" data-tab="financial" disabled>
+        <i class="fa-light fa-file-invoice-dollar"></i>
+        <p>Financeiro</p>
+    </button>
+</div>

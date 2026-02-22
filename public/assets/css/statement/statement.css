@@ -1,0 +1,55 @@
+/*. CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*. MENU DO TOPO */
+#menuTop .left {
+    align-items: center;
+    gap: 10px;
+}
+
+#menuTop .left .name {
+    width: 80%;
+}
+
+#menuTop .left .id {
+    width: 20% !important;
+}
+
+/*. BOTÃO DATA BOQUEADA */
+.btnLockedDay {
+    margin-right: auto;
+    justify-content: center;
+    cursor: pointer !important;
+    background: #777 !important;
+}
+
+.btnLockedDay:hover {
+    background: #7777779d !important;
+}
+
+.btnLockedDay.active {
+    background: orangered !important;
+}
+
+/*. LIST */
+#list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#list .fa-user,
+#list .fa-calendar-check,
+#list .fa-notes-medical,
+#list .fa-trash-alt,
+#list .fa-copy {
+    font-size: 20px;
+    color: var(--col1);
+    cursor: pointer;
+}
+
+nav {
+    border-top: 1px solid #777;
+}

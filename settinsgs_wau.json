@@ -1,0 +1,119 @@
+{
+    //********** Padrão
+    "security.workspace.trust.untrustedFiles": "open",
+    //********** Verificar
+    "files.autoSave": "onFocusChange",
+    "editor.guides.bracketPairs": "active",
+    "explorer.compactFolders": false,
+    "php.validate.executablePath": "C:\\laragon\\bin\\php\\php-8.1.10-Win32-vs16-x64\\php.exe",
+    //********** Fonte
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "window.commandCenter": true,
+    "editor.codeActionsOnSave": {},
+    //********** Prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "editor.formatOnSave": true,
+    // "prettier.printWidth": 140,
+    "prettier.printWidth": 125,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+    //********** outros
+    "workbench.colorTheme": "Illusion Bordered",
+    "workbench.productIconTheme": "el-vsc-v1-icons",
+    "workbench.iconTheme": "material-icon-theme",
+    //********** better-comments
+    "better-comments.tags": [
+        {
+            "tag": ".",
+            "color": "#eeff00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": ":",
+            "color": "#48ff00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#ff4500",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "-",
+            "color": "#00ffd5",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "/",
+            "color": "#2b9900",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "+",
+            "color": "#00a2ff",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "!",
+            "color": "#ff0000",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "=",
+            "color": "#000000",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#00ffd5",
+            "bold": true,
+            "italic": false
+        }
+    ],
+    "json.schemas": [],
+    // "editor.rulers": [140],
+    "editor.rulers": [125],
+    "security.promptForLocalFileProtocolHandling": false,
+    "php.validate.enable": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false
+
+    // "editor.wordWrapColumn": 140
+}

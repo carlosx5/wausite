@@ -1,0 +1,20 @@
+.container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    border: 1px solid red;
+}
+
+.modalEdit {
+    width: 400px;
+    background: none;
+}
+
+.modalEdit .border {
+    padding: 100px;
+    border: 1px solid red;
+}
+
+.modalEdit .input label {
+    margin-bottom: 5px;
+}

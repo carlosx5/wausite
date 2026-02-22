@@ -1,0 +1,26 @@
+#menuTop {
+    .left input {
+        display: none;
+    }
+}
+
+.left-css {
+}
+
+.right-css {
+    width: 400px;
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .list {
+        padding: 10px;
+
+        td {
+            cursor: pointer;
+        }
+    }
+}

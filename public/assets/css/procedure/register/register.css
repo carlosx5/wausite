@@ -1,0 +1,94 @@
+:root {
+    --col_register: #003c8b;
+    --col_register_1: #004db3;
+    --col_orange: #ff6600;
+}
+
+
+/********** CADASTRO */
+.f_cadastre {
+    margin-top: 20px;
+    border: 1px solid #b1b1b1;
+}
+
+.f_cadastre span {
+    background: var(--col1);
+    border: 2px solid var(--col1);
+    color: #fff;
+}
+
+.f_cadastre .row {
+    justify-content: space-between;
+}
+
+
+/********** CONFIGURAÇÃO */
+.f_config {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid #b1b1b1;
+    height: calc(100vh - 20px - 10px - 72px);
+    overflow: auto;
+}
+
+.f_config .f_clinic span {
+    background: var(--col1);
+    border: 2px solid var(--col1);
+    color: #fff;
+}
+
+.f_config .f_clinic span:nth-of-type(1) {
+    width: 170px;
+}
+
+.f_config .f_clinic .input-group {
+    max-width: 320px;
+}
+
+.f_config .f_clinic input {
+    padding: 0 20px;
+    text-align: end;
+}
+
+.f_config .content {
+    display: flex;
+    width: 450px;
+    padding: 5px;
+}
+
+.f_config .content .d_btn {
+    display: flex;
+    margin-left: 20px;
+}
+
+.f_config .content .btn {
+    cursor: pointer;
+}
+
+/* PARCEIRO */
+.f_config .content.content_partiner {
+    width: 800px;
+}
+
+.f_config .content.content_partiner .input-group:nth-of-type(2) {
+    max-width: 300px;
+}
+
+/* VOUCHER */
+.f_config .content.voucher_description {
+    width: 800px;
+}
+
+.f_config .content.voucher_description .input-group:nth-of-type(1) {
+    min-width: calc(100% - 170px);
+}
+
+[name=voucher_description] {
+    text-align: start !important;
+}
+
+/* OUTROS */
+.btn[data-active="0"] {
+    background: #666060;
+}

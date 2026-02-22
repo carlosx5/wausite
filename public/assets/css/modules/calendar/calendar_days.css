@@ -1,0 +1,108 @@
+.md7 .modal-box {
+    width: 400px;
+    color: #fff;
+}
+
+.md7 .year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.md7 .year i {
+    font-size: 35px;
+}
+
+.md7 .month .btn {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    border-color: #8080807e;
+}
+
+.md7 .month .btn {
+    color: #fff;
+    font-weight: 100;
+}
+
+.md7 .month .btn.selected {
+    color: greenyellow;
+}
+
+.md7 .month .btn.today {
+    border-color: orange;
+}
+
+.md7 .dayWeek {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+.md7 .dayWeek .week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+}
+
+.md7 .dayWeek .week div {
+    display: flex;
+    justify-content: center;
+}
+
+.md7 .dayWeek .week div.fds {
+    font-weight: 800;
+    color: red;
+}
+
+.md7 .dayWeek .day {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    margin-top: 15px;
+}
+
+.md7 .dayWeek .day div {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #8080807e;
+}
+
+.md7 .dayWeek .day div.today {
+    border: 1px solid orange;
+}
+
+.md7 .dayWeek .day div:not([data-day]) {
+    border: none;
+}
+
+.md7 .dayWeek .day div[data-selected="1"] {
+    color: greenyellow;
+}
+
+.md7 .dayWeek .day div:hover {
+    border-radius: 20px;
+    color: orangered;
+}
+
+.md7 .footer {
+    display: flex;
+    margin: 10px 20px 20px;
+    padding: 30px;
+    border: 1px solid gray;
+}
+
+.md7 .exit {
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #9e9e9e;
+}

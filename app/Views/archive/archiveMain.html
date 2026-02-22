@@ -1,0 +1,49 @@
+<section class="container">
+    <input type="file" id="loadImage" accept=".jpg, .jpeg, .png, .pdf" style="display: none" />
+
+    <!--+ MENU TOPO -->
+    <div id="menuTop"><?=$this->include("patient/libraries/menuTop.html")?></div>
+
+    <!--+ MAIN -->
+    <div class="form-grow">
+        <!--+ IMAGENS -->
+        <div id="image" class="module-main d-none"><?=$this->include("archive/image/archiveImage.html")?></div>
+    </div>
+
+    <!--+ MODAL QRCODE -->
+    <div class="modal fade" id="modalQrCode" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Adicionar documento por QRCode</h1>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="image mt-3"></div>
+                    <div class="txt-bot text-center mt-5">
+                        <h6>Clique no botão "Fechar" assim que tirar todas as fotos.</h6>
+                        <h5>O QRCode tem validade de 10 minutos.</h5>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary px-5 close">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--+ MODAL CAROUSEL -->
+    <div class="modal fade" id="modalCarousel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="image"></div>
+                </div>
+
+                <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</section>

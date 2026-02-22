@@ -1,0 +1,64 @@
+<session class="container">
+    <!--+ ABAS DE TOPO -->
+    <div id="menuTop">
+        <!--+ Left -->
+        <?=$this->include("templates/menuTopLeft.html")?>
+        <!--+ Right -->
+        <div class="right justifyEnd">
+            <button class="btn btn-group btn_register tab">
+                <p>Cadastro</p>
+            </button>
+            <button class="btn btn-group tab disabled">
+                <p>Funcionário</p>
+            </button>
+            <button class="btn btn-group tab disabled">
+                <p>Permissões</p>
+            </button>
+            <button class="btn btn-group tab disabled">
+                <p>Extrato</p>
+            </button>
+        </div>
+    </div>
+
+    <div class="border p-2">
+        <div class="cropper-img">
+            <img id="image" src="<?= base_url('data/userSignature/model02.jpg') ?>" />
+        </div>
+
+        <div class="webcan-container bdRed">
+            <video id="webcam" autoplay playsinline style="max-width: 100%"></video>
+            <canvas id="snapshot" style="display: none"></canvas>
+        </div>
+
+        <div class="cropper-tools">
+            <!-- Input de imagem -->
+            <input type="file" id="cropperInputImage" accept=".jpg, .jpeg, .png" style="display: none" />
+            <button class="btn btn-primary">
+                <label class="cropperInputImage" for="cropperInputImage">
+                    <span>Busca imagem</span>
+                </label>
+            </button>
+
+            <!-- Botão para iniciar webcan -->
+            <button class="btn btn-primary" id="webcanStart">Inicia Webcan</button>
+
+            <!-- Botão para capturar imagem pela webcan -->
+            <button class="btn btn-primary" id="webcanCapture">Captura Webcan</button>
+
+            <!-- Botão para recortar -->
+            <button class="btn btn-primary" id="cropButton">Recortar</button>
+
+            <!-- Botão para enviar imagem -->
+            <button class="btn btn-success" id="sendImage">Salvar imagem</button>
+
+            <!-- Botão teste -->
+            <button class="btn btn-primary" id="teste">Teste</button>
+        </div>
+
+        <!-- Exibir imagem recortada -->
+        <div>
+            <h3>Imagem Recortada:</h3>
+            <canvas id="croppedResult"></canvas>
+        </div>
+    </div>
+</session>

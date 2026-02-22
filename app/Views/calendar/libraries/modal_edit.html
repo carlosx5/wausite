@@ -1,0 +1,126 @@
+<div class="modal fade modal-lg" id="modalEdit" data-bs-backdrop="static" tabindex="-1">
+    <input class="form-control osId" type="hidden" />
+    <input class="form-control optLock" type="hidden" />
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ps-2">Agendamento de Serviço:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="content-box">
+                    <!--+ Seletores -->
+                    <div class="row">
+                        <div class="col-8">
+                            <input class="form-control patientId" type="hidden" />
+                            <label>Nome:</label>
+                            <div class="input-group">
+                                <input class="form-control patientName" readonly required />
+                                <button class="btn color-wau2 findPatient" title="Buscar paciente">
+                                    <i class="fa-light fa-user-injured fa-lg"></i>
+                                </button>
+                                <button class="btn color-wau2 goPatient ms--1" title="Cadastro do paciente">
+                                    <i class="fa-light fa-address-card fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label>Serviço:</label>
+                            <div class="input-group">
+                                <input class="form-control displayId" readonly />
+                                <button class="btn color-wau2 goOs" title="Cadastro da OS">
+                                    <i class="fa-light fa-address-card fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-8">
+                            <input class="form-control profId" type="hidden" />
+                            <label>Profissional:</label>
+                            <div class="input-group">
+                                <input class="form-control profName" readonly required />
+                                <button class="btn color-wau2 findProf" title="Buscar profissional">
+                                    <i class="fa-light fa-user-doctor fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-8">
+                            <input class="form-control procedureId" type="hidden" />
+                            <label>Procedimento:</label>
+                            <div class="input-group">
+                                <input class="form-control procedureName" readonly required />
+                                <button class="btn color-wau2 findProcedure" title="Buscar procedimento">
+                                    <i class="fa-light fa-hospital-user fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <label>Valor:</label>
+                            <div class="input-group">
+                                <input class="form-control value" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 px-2">
+                        <div class="row dates-box">
+                            <div class="col-6">
+                                <label>Inicio:</label>
+                                <div class="input-group">
+                                    <input class="form-control dateInit" type="date" required />
+                                    <input
+                                        class="form-control ms-1 timeInit"
+                                        type="time"
+                                        required
+                                        style="max-width: 120px"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Fim:</label>
+                                <div class="input-group">
+                                    <input class="form-control dateEnd" type="date" required />
+                                    <input class="form-control ms-1 timeEnd" type="time" required style="max-width: 120px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <textarea class="form-control notes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end actions mt-3">
+                    <div class="box-confirmation">
+                        <button class="btn color-wau2" type="button" disabled>
+                            Mensagem
+                            <span class="badge color-wau3 ms-2"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer mt-3">
+                <button class="btn color-wau3 save">
+                    <i class="fa-regular fa-floppy-disk me-2"></i><span>Salvar</span>
+                </button>
+                <button class="btn btn-danger delete" data-bs-dismiss="modal">
+                    <i class="fa-regular fa-trash-can me-2"></i><span>Deletar</span>
+                </button>
+                <button class="btn color-wau2 exit" data-bs-dismiss="modal">
+                    <i class="fa-regular fa-circle-xmark me-2"></i><span>Sair</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

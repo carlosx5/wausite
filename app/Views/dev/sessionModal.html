@@ -1,0 +1,26 @@
+<style>
+    .modal-session {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 30px;
+        z-index: 9999;
+        border: 5px solid red;
+        background-color: #fff;
+        color: #363636;
+    }
+
+    .modal-session textarea {
+        width: 100%;
+        height: 90%;
+        padding: 20px;
+    }
+</style>
+
+<session class="modal-session">
+    <textarea class="txt"></textarea>
+
+    <button class="btn btn-danger mt-3 px-5" onclick="this.closest('.modal-session').style.display='none';">Fechar</button>
+</session>

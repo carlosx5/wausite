@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    width: 95%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+
+/*.CADASTRO */
+#register {
+    display: flex;
+    flex-flow: column;
+    padding: 30px 30px;
+    border: 1px solid #777;
+}
+
+#register [type="date"] {
+    text-align: center;
+}
+
+#register [mask="number"] {
+    text-align: end;
+}
+
+#register .btnLaunchLoan:disabled {
+    background: #777;
+    border-color: #777;
+}
+
+
+/*.LISTA */
+#list {
+    flex-grow: 1;
+    padding: 30px 30px;
+    overflow: auto;
+    border: 1px solid #777;
+}

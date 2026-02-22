@@ -1,0 +1,59 @@
+<div class="container p-0">
+    <div class="d-flex mt-2">
+        <!--+ SECTION "TELAS" -->
+        <div class="col-4 p-0 bdGrey" id="views">
+            <!--+ TITULO -->
+            <div class="title_bar col-12">Telas</div>
+
+            <!--+ LISTA -->
+            <div class="views_template col-12 row g-0"></div>
+        </div>
+
+        <!--+ SECTION "PERMISSÕES" -->
+        <div class="col-8 p-0 bdGrey" id="permissions">
+            <!--+ TITULO -->
+            <div class="title_bar col-12">Permissões</div>
+
+            <!--+ LISTA -->
+            <div class="permissions_template col-12 row g-0 px-5"></div>
+
+            <!--+ BOTÕES -->
+            <div class="permissionsBtnSave">
+                <button class="btn btn-primary w-25" onclick="permission.btnSave()">Salvar</button>
+                <button class="btn btn-danger w-25" onclick="permission.btnCancel()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!--+ SECTION "TOOLS" NO BOT -->
+    <div class="tools py-2" style="border: 1px solid #777">
+        <!--+ INPUT -->
+        <div class="d-flex justify-content-center">
+            <div class="col-3 px-1">
+                <input class="input form-control" type="text" disabled />
+            </div>
+        </div>
+
+        <!--+ BOTÕES -->
+        <div class="d-flex justify-content-center mt-2 btnGroup" style="gap: 5px">
+            <button class="btn btn-secondary px-3" name="btnSave" disabled>
+                <i class="fal fa-save"></i>
+            </button>
+            <button class="btn btn-secondary px-3" name="btnAdd" disabled>
+                <i class="far fa-plus-square"></i>
+            </button>
+            <button class="btn btn-secondary px-3" name="btnUpdate" disabled>
+                <i class="far fa-edit"></i>
+            </button>
+            <button class="btn btn-secondary px-3" name="btnRemove" disabled>
+                <i class="fa-light fa-trash-can"></i>
+            </button>
+            <button class="btn btn-secondary px-3" name="btnUp" disabled>
+                <i class="far fa-arrow-alt-circle-up"></i>
+            </button>
+            <button class="btn btn-secondary px-3" name="btnDown" disabled>
+                <i class="far fa-arrow-alt-circle-down"></i>
+            </button>
+        </div>
+    </div>
+</div>

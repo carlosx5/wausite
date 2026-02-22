@@ -1,0 +1,2 @@
+origin	https://github.com/carlosx5/wausaude.git (fetch)
+origin	https://github.com/carlosx5/wausaude.git (push)

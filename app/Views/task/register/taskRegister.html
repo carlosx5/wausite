@@ -1,0 +1,47 @@
+<div class="modal p-5">
+    <div class="form-grow py-4" id="register">
+        <div class="row px-3">
+            <div class="col-6">
+                <label>Descrição</label>
+                <input type="text" class="form-control" name="" mask="string" mask-type="3" />
+            </div>
+            <div class="col-4">
+                <label>Autor</label>
+                <input type="text" class="form-control" name="" mask="string" mask-type="3" />
+            </div>
+            <div class="col-1">
+                <label>Prefixo</label>
+                <select class="form-select" name="name_prefix">
+                    <option value="Sr.">Sr.</option>
+                    <option value="Sra.">Sra.</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Dra.">Dra.</option>
+                    <option value="none">Ocultar</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <label>ID</label>
+                <input type="text" class="form-control" name="id" readonly />
+            </div>
+        </div>
+
+        <div class="row pt-3 px-3">
+            <div class="col-5">
+                <label>Telefone</label>
+                <div class="container-phone">
+                    <div class="img">
+                        <img src="" name="ddi_flag" />
+                        <span></span>
+                    </div>
+                    <input type="hidden" name="id_ddi" />
+                    <input type="hidden" name="phone_ddi" />
+                    <input type="text" class="form-control" name="phone_number" mask="phone" />
+                </div>
+            </div>
+            <div class="col-5">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" mask="email" />
+            </div>
+        </div>
+    </div>
+</div>

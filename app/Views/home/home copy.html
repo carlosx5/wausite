@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="img-box">
+        <!--+ Imagem de fundo -->
+        <img class="img-cover" src="<?=$image?>" />
+
+        <!--+ Overlay de gradiente -->
+        <div
+            class="position-absolute top-0 start-0 w-100 h-100"
+            style="
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+            "
+        ></div>
+
+        <!--+ Box da direita -->
+        <div class="box-main">
+            <!--+ Box de login -->
+            <div class="box-login">
+                <div class="content">
+                    <h5>Usuário: <?= session()->log_userName ?></h5>
+                    <h5>Clinica: <?= session('clinic')['nameSocial'] ?></h5>
+                    <h5 class="logout"><i class="fa-light fa-person-from-portal me-2"></i>Sair do sistema</h5>
+                </div>
+            </div>
+
+            <!--+ Box de opções de temas -->
+            <div class="box-color">
+                <div class="title">Opções de Tema:</div>
+                <div class="options">
+                    <div class="verde" data-color="verde"></div>
+                    <div class="azul" data-color="azul"></div>
+                    <div class="vinho" data-color="vinho"></div>
+                    <div class="rosa" data-color="rosa"></div>
+                </div>
+            </div>
+
+            <div class="box-logo">
+                <!--+ Logo -->
+                <img class="logo" src="<?=$logo?>" />
+
+                <!--+ IA -->
+                <img class="ia" src="<?=$ia?>" />
+            </div>
+        </div>
+    </div>
+</div>

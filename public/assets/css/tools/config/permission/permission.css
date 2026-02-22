@@ -1,0 +1,41 @@
+.title_bar {
+    border: 1px solid #b1b1b1;
+}
+
+.btn.active:hover {
+    color: #fff;
+}
+
+.btn.inactive:hover {
+    color: #fff;
+    background: rgb(144, 144, 144);
+}
+
+.active {
+    color: #FF5900;
+    background: #041D2D;
+}
+
+.inactive {
+    color: #000;
+    background: #C4C4C4;
+}
+
+.permissionsBtnSave {
+    display: none;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: var(--col5);
+}
+
+
+.f_tools {
+    display: flex;
+    justify-content: center;
+}
+
+.f_tools .tools {
+    /* border: 1px solid red; */
+    width: 500px;
+}

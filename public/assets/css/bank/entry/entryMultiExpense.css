@@ -1,0 +1,226 @@
+#md8 {
+    width: 750px;
+    height: 95%;
+    background: none;
+    color: #fff;
+}
+
+#md8 .modal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 10px;
+    background-color: #285458;
+}
+
+
+/*.f_in */
+#md8 .f_in {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#md8 .f_in .top {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 10px 0;
+    background: #192b33;
+}
+
+#md8 .f_in .top .txt {
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    color: aqua;
+}
+
+#md8 .f_in .add {
+    display: grid;
+    padding: 0 20px 10px;
+    margin-bottom: 10px;
+    background: #192b33;
+}
+
+#md8 .f_in .grid {
+    display: grid;
+    gap: 2px;
+    margin-bottom: 3px;
+}
+
+#md8 .f_in .gridBank {
+    grid-template-columns: 90px 1fr 2fr 100px 40px;
+}
+
+#md8 .f_in .mod {
+    justify-self: flex-end !important;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#md8 .f_in .scrollbar {
+    overflow: auto;
+    padding: 0 20px;
+}
+
+#md8 .f_in .total {
+    display: none;
+    grid-template-columns: 1fr 100px 40px;
+    gap: 2px;
+    width: 100%;
+}
+
+#md8 .f_in .total .txt {
+    justify-items: flex-end;
+    align-self: center;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+
+/*.f_out */
+#md8 .f_out {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#md8 .f_out .top {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 10px 0;
+    background: #192b33;
+}
+
+#md8 .f_out .top div:nth-of-type(2) {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+#md8 .f_out .top .txt {
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    color: aqua;
+}
+
+#md8 .f_out .top .btn {
+    width: 120px;
+    border-color: #00565f;
+}
+
+#md8 .f_out .top .btn:hover {
+    border-color: #0097a8;
+}
+
+#md8 .f_out .top .btn.on {
+    color: orangered;
+}
+
+#md8 .f_out .add {
+    display: none;
+    padding: 0 20px 10px;
+    margin-bottom: 10px;
+    background: #192b33;
+}
+
+#md8 .f_out .add.on {
+    display: grid;
+}
+
+#md8 .f_out .grid {
+    display: grid;
+    gap: 2px;
+    margin-bottom: 3px;
+    /* border: 1px solid blue; */
+}
+
+#md8 .f_out .gridOs {
+    grid-template-columns: 90px .8fr 3fr 100px 40px;
+    /* border: 1px solid red; */
+}
+
+#md8 .f_out .gridExpense {
+    grid-template-columns: 90px 1fr 2fr 100px 40px;
+}
+
+#md8 .f_out .gridSupplier {
+    grid-template-columns: 90px 1fr 100px 40px;
+}
+
+#md8 .f_out .mod {
+    justify-self: flex-end !important;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#md8 .f_out .scrollbar {
+    overflow: auto;
+    padding: 0 20px;
+}
+
+#md8 .f_out .total {
+    display: none;
+    grid-template-columns: 1fr 100px 40px;
+    gap: 2px;
+    width: 100%;
+}
+
+#md8 .f_out .total .txt {
+    justify-items: flex-end;
+    align-self: center;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+
+/*.ICONES DE f_in E f_out */
+#md8 .value,
+#md8 .total_value {
+    text-align: end;
+}
+
+#md8 .f20 {
+    font-size: 20px;
+}
+
+#md8 .f25 {
+    font-size: 25px;
+}
+
+#md8 .f33 {
+    font-size: 33px;
+}
+
+#md8 .f20,
+#md8 .f25,
+#md8 .f33 {
+    cursor: pointer;
+    color: #ff4500;
+}
+
+
+/*.RODAPÉ */
+#md8 .f_footer {
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #b1b1b1;
+}
+
+#md8 .f_footer .btn.active {
+    color: orangered;
+}
+
+#md8 .f_footer .btnExit {
+    margin-right: auto;
+}

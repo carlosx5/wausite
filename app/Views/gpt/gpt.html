@@ -1,0 +1,68 @@
+<!--: MENU TOPO -->
+<session id="menuTop">
+    <div class="left">
+        <input type="text" class="name" id="nameTop" readonly />
+    </div>
+    <div class="right justifyEnd">
+        <button class="btn btn-group btn_register tab">
+            <p>Cadastro</p>
+        </button>
+        <button class="btn btn-group btn_os tab">
+            <p>Horários</p>
+        </button>
+    </div>
+</session>
+
+<!--: CADASTRO -->
+<session id="register">
+    <div>
+        <div class="col-7">
+            <div class="input-group name">
+                <span class="input-group-text">Nome</span>
+                <input type="text" class="form-control" name="name" />
+            </div>
+        </div>
+        <div class="col-2 id">
+            <div class="input-group name">
+                <span class="input-group-text">ID</span>
+                <input type="text" class="form-control text-center" name="id" readonly />
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <textarea name="content"></textarea>
+    </div>
+</session>
+
+<!--: PRÉ-VISUALIZAÇÃO DE RESPOSTAS -->
+<session id="preview">
+    <div class="group">
+        <div>
+            <span>Pergunta:</span>
+            <input type="text" class="inputAsk" name="inputAsk" />
+            <button class="btn btn-primary ms-2 btnSend">Enviar</button>
+        </div>
+        <div>
+            <span>Pergunta #1:</span>
+            <input type="text" class="inputQuestion1" name="question1" readonly />
+        </div>
+        <div>
+            <span>Pergunta #2:</span>
+            <input type="text" class="inputQuestion2" name="question2" readonly />
+        </div>
+        <div>
+            <span>Interesse:</span>
+            <input type="text" class="inputInterest" name="interest" readonly />
+            <button class="btn btn-danger ms-2 btnDelInterest"><i class="fa-light fa-trash-can"></i></button>
+        </div>
+    </div>
+    <div class="response">
+        <div>
+            <textarea name="response"></textarea>
+        </div>
+        <div>
+            <input type="text" class="ias" name="ias" readonly />
+        </div>
+    </div>
+</session>

@@ -1,0 +1,275 @@
+<!--+ BARRA DE NAVEGAÇÃO -->
+<div id="headerBar">
+    <div class="title">
+        <i class="fa-light fa-address-card me-3"></i>
+        <span>Cadastro de Pacientes</span>
+    </div>
+    <div class="menu">
+        <button class="btn btn-headerBar search"><i class="fa-light fa-folder-open"></i>Busca Paciente</button>
+        <button class="btn btn-headerBar new" disabled><i class="fa-light fa-folder-plus"></i>Novo Paciente</button>
+        <button class="btn btn-headerBar delete" disabled><i class="fa-light fa-trash-can"></i>Deletar Paciente</button>
+    </div>
+</div>
+
+<input type="file" id="bioimpedanceInput" accept=".jpg, .jpeg, .pdf" style="display: none" />
+
+<div class="left left-css">
+    <!--+ Nome -->
+    <div class="row px-3">
+        <div class="col-5">
+            <label>Nome completo</label>
+            <input
+                type="text"
+                class="form-control"
+                name="name"
+                mask="string"
+                mask-type="3"
+                autocomplete="new-password"
+                required
+            />
+        </div>
+        <div class="col-1">
+            <label>Prefixo</label>
+            <select class="form-select text-center" name="name_prefix" required>
+                <option value=""></option>
+                <option value="Sr.">Sr.</option>
+                <option value="Sra.">Sra.</option>
+                <option value="Dr.">Dr.</option>
+                <option value="Dra.">Dra.</option>
+                <option value="">Ocultar</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label>Nome social</label>
+            <div class="input-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name_social"
+                    mask="string"
+                    mask-type="3,5"
+                    autocomplete="new-password"
+                    required
+                />
+                <button class="btn color-wau1 btnNameShort" data-bs-toggle="tooltip" data-bs-title="Gera automaticamente">
+                    <i class="fa-light fa-arrows-rotate"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-1">
+            <label>Sexo</label>
+            <select class="form-select text-center" name="gender">
+                <option value=""></option>
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label>Registro</label>
+            <input type="text" class="form-control text-center" js="displayId" readonly />
+        </div>
+    </div>
+
+    <!--+ Telefone -->
+    <div class="row pt-3 px-3">
+        <div class="col-3">
+            <label>DDI - Telefone</label>
+            <div class="d-flex gap-1">
+                <input
+                    type="text"
+                    class="form-control text-center"
+                    name="phone_ddi"
+                    mask="phone"
+                    mask-type="ddi"
+                    placeholder="55"
+                    required
+                    style="width: 55px"
+                />
+                <input
+                    type="text"
+                    class="form-control"
+                    name="phone_number"
+                    mask="phone"
+                    placeholder="11 99999-9999"
+                    required
+                />
+            </div>
+        </div>
+        <div class="col-3">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" mask="email" autocomplete="new-password" required />
+        </div>
+        <div class="col-2">
+            <label>RG</label>
+            <input type="text" class="form-control" name="rg" autocomplete="new-password" />
+        </div>
+        <div class="col-2">
+            <label>CPF</label>
+            <input type="text" class="form-control cpf" name="cpf" mask="cpf" required />
+        </div>
+        <div class="col-2">
+            <label>Nascimento</label>
+            <input type="date" class="form-control" name="birthday" />
+        </div>
+    </div>
+
+    <!--+ Endereço -->
+    <div class="row pt-3 px-3">
+        <div class="col-2">
+            <label>CEP</label>
+            <input
+                type="text"
+                class="form-control"
+                name="address_zip"
+                id="address_zip"
+                mask="zip"
+                autocomplete="new-password"
+            />
+        </div>
+        <div class="col-6">
+            <label>Endereço</label>
+            <input type="text" class="form-control" name="address" mask="string" mask-type="3" autocomplete="new-password" />
+        </div>
+        <div class="col-2">
+            <label>Número</label>
+            <input type="text" class="form-control" name="address_number" autocomplete="new-password" />
+        </div>
+        <div class="col-2">
+            <label>Complemento</label>
+            <input type="text" class="form-control" name="address_complement" />
+        </div>
+    </div>
+
+    <!--+ Bairro -->
+    <div class="row pt-3 px-3">
+        <div class="col-4">
+            <label>Bairro</label>
+            <input
+                type="text"
+                class="form-control"
+                name="address_neighb"
+                mask="string"
+                mask-type="3"
+                autocomplete="new-password"
+            />
+        </div>
+        <div class="col-4">
+            <label>Cidade</label>
+            <input
+                type="text"
+                class="form-control"
+                name="address_city"
+                mask="string"
+                mask-type="3"
+                autocomplete="new-password"
+            />
+        </div>
+        <div class="col-2">
+            <label>Estado</label>
+            <input
+                type="text"
+                class="form-control"
+                name="address_state"
+                mask="string"
+                mask-type="1"
+                autocomplete="new-password"
+            />
+        </div>
+        <div class="col-2">
+            <label>País</label>
+            <input type="text" class="form-control" name="coutry" mask="string" mask-type="1" />
+        </div>
+    </div>
+
+    <!--+ Nome da mãe -->
+    <div class="row pt-3 px-3">
+        <div class="col-6">
+            <label>Nome da mãe</label>
+            <input
+                type="text"
+                class="form-control"
+                name="name_mother"
+                mask="string"
+                mask-type="3"
+                autocomplete="new-password"
+            />
+        </div>
+        <div class="col-6">
+            <label>Empresa</label>
+            <input type="text" class="form-control" name="name_company" mask="string" mask-type="3" />
+        </div>
+    </div>
+
+    <!--+ Plano de saúde -->
+    <div class="pt-3 px-3">
+        <div class="form-hr my-2">
+            <label>Plano de saúde:</label>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <label>Convênio</label>
+                <input type="text" class="form-control" name="plan_name" list="planList" />
+                <datalist id="planList">
+                    <option value="Particular"></option>
+                    <option value="Bradesco"></option>
+                    <option value="Itaú"></option>
+                    <option value="Omint"></option>
+                    <option value="Amil One"></option>
+                    <option value="SulAmérica"></option>
+                    <option value="Porto Seguro"></option>
+                    <option value="Allianz"></option>
+                    <option value="Sompo"></option>
+                    <option value="Care Plus"></option>
+                    <option value="Notre Dame"></option>
+                    <option value="Unimed"></option>
+                    <option value="Mediservice"></option>
+                </datalist>
+            </div>
+            <div class="col-4">
+                <label>Categoria</label>
+                <input type="text" class="form-control" name="plan_category" />
+            </div>
+            <div class="col-2">
+                <label>Nº beneficiário</label>
+                <input type="text" class="form-control" name="plan_number" />
+            </div>
+            <div class="col-2">
+                <label>Valor da consulta</label>
+                <input type="text" class="form-control text-end" name="plan_value" mask="number" />
+            </div>
+        </div>
+    </div>
+
+    <!--+ Observações -->
+    <div class="px-3">
+        <div class="form-hr mt-4 mb-2">
+            <label>Observações:</label>
+        </div>
+        <div class="row mt-3">
+            <div class="col-6">
+                <label>Observações</label>
+                <textarea class="form-control" rows="5" name="notes_clinic"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3">
+                <label>Clínica</label>
+                <input type="hidden" name="id_clinic" />
+                <div class="input-group">
+                    <input type="text" class="form-control" name="nm_clinic" readonly />
+                    <button
+                        class="btn color-wau1 btnChangeClinic"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Vai p/ cadastro de paciente"
+                    >
+                        <i class="fa-light fa-folder-open"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-3">
+                <label>Marketing</label>
+                <input type="text" class="form-control" readonly />
+            </div>
+        </div>
+    </div>
+</div>

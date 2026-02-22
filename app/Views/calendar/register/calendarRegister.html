@@ -1,0 +1,25 @@
+<div class="left">
+    <div class="calendar"></div>
+</div>
+
+<div class="right">
+    <!--+ Filtro -->
+    <div class="row tags">
+        <button class="btn tag-2">Confirmação 1</button>
+        <button class="btn tag-3">Confirmação 2</button>
+        <button class="btn tag-4">Recepção</button>
+        <button class="btn tag-5">Atendimento</button>
+    </div>
+
+    <!--+ Lista -->
+    <div class="list"></div>
+
+    <!--+ Mensagem de vazio -->
+    <div class="empty-message" style="display: none">
+        <i class="fa-light fa-list-radio"></i>
+        <p>Sem agendamentos para essa data.</p>
+    </div>
+</div>
+
+<!--+ MODAL EDITAR/NOVO/VISUALIZAR CADASTRO DA OS -->
+<?=$this->include("calendar/libraries/modal_edit.html")?>

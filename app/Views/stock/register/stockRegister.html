@@ -1,0 +1,69 @@
+<div id="headerBar">
+    <div>
+        <span>Estoque</span>
+        <i class="fa-light fa-arrow-right-long mx-2"></i>
+        <i class="fa-light fa-capsules ms-2 me-1"></i>
+        <span>Cadastro</span>
+    </div>
+    <div class="menu">
+        <button class="btn btn-headerBar search"><i class="fa-light fa-folder-open"></i>Busca Estoque</button>
+        <button class="btn btn-headerBar new" disabled><i class="fa-light fa-folder-plus"></i>Novo Estoque</button>
+        <button class="btn btn-headerBar block" disabled>
+            <i class="fa-light fa-diamond-exclamation"></i>Bloqueia Estoque
+        </button>
+        <button class="btn btn-headerBar delete" disabled><i class="fa-light fa-trash-can"></i>Deleta Estoque</button>
+    </div>
+</div>
+
+<div class="content-main disabled">
+    <div class="unique-main">
+        <div class="row">
+            <div class="col-5">
+                <label>Nome</label>
+                <input type="text" class="form-control" name="name" maxlength="50" />
+            </div>
+            <div class="col-2">
+                <label>Categoria</label>
+                <select class="form-select" name="id_category">
+                    <option value="0" selected>Selecione</option>
+                    <option value="1">Medicamentos</option>
+                    <option value="2">Materiais</option>
+                    <option value="3">Equipamentos</option>
+                    <option value="4">Outros</option>
+                </select>
+            </div>
+            <div class="col"></div>
+            <div class="col-1">
+                <label>Registro</label>
+                <input type="text" class="form-control text-center" js="displayId" readonly />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-1">
+                <label>Qt Estoque</label>
+                <input type="text" class="form-control" name="qt_stock" />
+            </div>
+            <div class="col-1">
+                <label>Qt Mínima</label>
+                <input type="text" class="form-control" name="qt_minStock" />
+            </div>
+            <div class="col-1">
+                <label>Qt Máxima</label>
+                <input type="text" class="form-control" name="qt_maxStock" />
+            </div>
+            <div class="col-2">
+                <label>Val Compra</label>
+                <input type="text" class="form-control" name="vl_purchase" mask="number" />
+            </div>
+            <div class="col-2">
+                <label>Val Venda</label>
+                <input type="text" class="form-control" name="vl_sale" mask="number" />
+            </div>
+            <div class="col-2">
+                <label>Validade</label>
+                <input type="date" class="form-control" name="expiryDate" />
+            </div>
+        </div>
+    </div>
+</div>

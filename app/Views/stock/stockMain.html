@@ -1,0 +1,42 @@
+<section class="container">
+    <!--+ MENU TOPO -->
+    <div id="menuTop">
+        <!--+ Left -->
+        <?=$this->include("templates/menuTopLeft.html")?>
+        <!--+ Center -->
+        <div class="center">
+            <div class="save-box">
+                <button class="btn btn-primary tab save" disabled>
+                    <i class="fa-light fa-floppy-disk fa-lg"></i>
+                    <span>Salvar</span>
+                </button>
+                <button class="btn btn-danger tab cancel" disabled>
+                    <i class="fa-light fa-ban fa-lg"></i>
+                    <span>Cancelar</span>
+                </button>
+            </div>
+        </div>
+        <!--+ Right -->
+        <div class="right justifyEnd">
+            <button class="btn btn-group list tab" data-tab="list">
+                <i class="fa-light fa-square-list"></i>
+                <p>Lista</p>
+            </button>
+            <button class="btn btn-group register tab" data-tab="register">
+                <i class="fa-light fa-capsules"></i>
+                <p>Cadastro</p>
+            </button>
+        </div>
+    </div>
+
+    <!--+ MAIN -->
+    <div class="form-grow">
+        <!--+ LISTA -->
+        <div id="list" class="module-main" style="display: none"><?=$this->include("stock/list/stockList.html")?></div>
+
+        <!--+ CADASTRO -->
+        <div id="register" class="module-main" style="display: none">
+            <?=$this->include("stock/register/stockRegister.html")?>
+        </div>
+    </div>
+</section>

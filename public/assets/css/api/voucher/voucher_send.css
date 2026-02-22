@@ -1,0 +1,135 @@
+@font-face {
+    font-family: athletic;
+    src: url(../../../../plugins/fonts/New-Athletic-M54.ttf);
+}
+
+@font-face {
+    font-family: arista;
+    src: url(../../../../plugins/fonts/Arista-Pro-Alternate-Regular-trial.ttf);
+}
+
+label,
+tr {
+    font-size: 17px !important;
+    color: var(--cl1) !important;
+}
+
+input,
+select,
+textarea,
+tbody td,
+tbody th {
+    color: #fff !important;
+    background: #192B33 !important;
+    border-color: #666060 !important;
+    font-size: 23px !important;
+}
+
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    margin: auto;
+    background: var(--cl2);
+    color: #fff;
+    /* border: 1px solid red; */
+}
+
+.title1 {
+    padding: 20px 0 0;
+    font-family: arista;
+    font-size: 35px;
+    color: #fff;
+}
+
+.title2 {
+    padding: 5px 0 10px;
+    font-family: Roboto-Regular;
+    color: #bbbbbb;
+}
+
+.page1 {
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    padding: 20px 30px;
+}
+
+.voucher_info {
+    font-family: athletic;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: .2rem;
+    color: #bbbbbb;
+}
+
+.f_btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.btnSend,
+.btnBack {
+    width: 60%;
+    padding: 15px 0;
+}
+
+.page2 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 50vh;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.page2 div {
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+.on {
+    display: flex;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .page1 {
+        width: 100%;
+        padding: 20px 20px;
+    }
+
+    .f_btn {
+        width: 100%;
+    }
+
+    .page2 {
+        width: 100%;
+        font-size: 40px;
+    }
+
+    .page2 div {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 330px) {
+    .btnSend {
+        padding: 10px 0;
+    }
+
+    .page2 div {
+        font-size: 30px;
+    }
+}

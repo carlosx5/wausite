@@ -1,0 +1,395 @@
+.flex {
+    /*
+    d-flex
+    d-flex-col
+    justify-content-center
+    align-items-start
+    align-self-baseline
+    mb-auto
+    flex-wrap
+    flex-grow-0
+    flex-grow-1
+    */
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 300px;
+
+    display: flex;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
+    flex-direction: column;
+    /* https://www.youtube.com/watch?v=3C7v3S-tnFw */
+
+    flex-wrap: wrap;
+    /* QUEBRA LINHA */
+    /* https://youtu.be/3C7v3S-tnFw?t=1577 */
+
+    flex-flow: row wrap;
+    /* https://youtu.be/3C7v3S-tnFw?t=1697 */
+
+    flex-basis: 200px;
+    /* https://youtu.be/3C7v3S-tnFw?t=2535 */
+
+    gap: 30px;
+    /* https://youtu.be/3C7v3S-tnFw?t=1159 */
+
+    align-self: flex-end;
+    /* https://youtu.be/3C7v3S-tnFw?t=2771 */
+
+    order: 2;
+    flex-grow: 1;
+    /* https://youtu.be/3C7v3S-tnFw?t=2224 */
+}
+
+.centraliza-texto {
+    text-align: center;
+    align-content: center;
+}
+
+.position {
+    position: relative;
+    /* https://www.youtube.com/watch?v=62KT2BUgmkU */
+}
+
+/*. FAZ COM QUE O TEXTO LONGO CAIBA DENTRO DA DIV COM RETICÊNCIAS NO FINAL */
+.long-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fontes {
+    /* VARIAS FONTES DO "Instituto.arc" */
+    /* https://www.cufonfonts.com/font/arista-pro-alternate#google_vignette */
+
+    @font-face {
+        font-family: arista;
+        src: url(../../../../plugins/fonts/Arista-Pro-Alternate-Regular-trial.ttf);
+    }
+}
+
+/*. Começa com "col" */
+[class^="col"]
+/*. Termina com "col" */
+[class$="col"]
+/*. Contém a palavra "col" exatamente (útil se class="col form-control") */
+[class~="col"]
+
+/*.SELECIONA A DIV QUE CONTEM .workTime DENTRO */
+div:has(> .workTime) {
+    padding: 0 27px;
+}
+
+/*.SELECIONA TODOS OS FILHOS MENOS O PRIMEIRO */
+.list:not(:first-child) {
+    color: red;
+}
+
+.display {
+    display: inline-block;
+    /* https://youtu.be/JDj5QGefetM?t=251 */
+}
+
+.transition1 {
+    transition: opacity 0.3s ease;
+    /* https://youtu.be/JDj5QGefetM?t=718 */
+}
+
+.transition2 {
+    transition: height 0.5s;
+}
+
+.transition2.now {
+    height: calc-size(auto);
+}
+
+/*.SUBISTITUI O vh NO CELULAR DESCONTANDO O MENU DO NAVEGADOR */
+.height {
+    height: 100svh;
+    height: 100dvh;
+    /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
+}
+
+/*.HEIGHT AUTO PARA TRANSITION */
+.element {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+.element.open {
+    height: calc-size(auto);
+}
+
+/*.NOT */
+.botao:hover:not(.desligado) {
+    background: red;
+}
+
+/*.GRID */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.my_div1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+/*.AJUSTA VARIAS DIVS */
+.content-boxes {
+    /*: https://www.youtube.com/watch?v=MDqhKkEN-IM */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 1rem;
+}
+
+/*.CENTRALIZANDO POSITION ABSOLUTE */
+.position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*: transform: translateY(-50%); */
+    /*: transform: translateX(-50%); */
+}
+
+/*.1-JUSTIFICANDO AS ALTURAS DAS DIVS DENTRO DE ".box" */
+.box {
+    /*: https://www.webtutorial.com.br/como-fazer-uma-div-preencher-a-altura-restante-da-tela-distribuindo-o-espaco-automaticamente */
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.box .header {
+    flex-grow: 0;
+    flex-basis: auto;
+    background-color: hotpink;
+}
+
+.box .content {
+    flex-grow: 1;
+    flex-basis: auto;
+    background-color: gold;
+}
+
+.box .footer {
+    flex-grow: 0;
+    flex-basis: 100px;
+    background-color: indianred;
+}
+
+/*.2-JUSTIFICANDO AS ALTURAS DAS DIVS DENTRO DE ".box" */
+.box {
+    /*: https://www.youtube.com/watch?v=ZOK-DU7vT0A */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #fff;
+    border: 1px solid #acacac;
+}
+
+.box div {
+    width: 200px;
+    height: 100px;
+
+    /* flex: 1; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
+    /* flex-basis: 0; */
+
+    border: 1px solid red;
+}
+
+.box div.d1 {
+    /*: O TAMANHO SE MOVIMENTA OCUPANDO O ESPAÇO DO ".box" */
+    /*: PODE-SE USAR DIFERENTES FRAÇÕES "flex-grow: 1; flex-grow: 2; flex-grow: 3" */
+    flex-grow: 1;
+}
+
+.box div.d2 {
+    flex-grow: 2;
+
+    /*: MANTEM O TAMANHO ORIGINAL "width: 200px" */
+    flex-shrink: 0;
+}
+
+.box div.d3 {
+    /*: O TAMANHO SE MOVIMENTA IGUINORANDO "width: 200px" */
+    flex-shrink: 1;
+}
+
+/*.BACKGROUND */
+.background {
+    background-image: url("../../../../img/whatsapp_bk.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.SELETOR */
+p:nth-of-type(1) {
+    color: #ea00ff;
+}
+
+/*.SHADOW */
+.box-shadow {
+    /* FERRAMENTA P/ CRIAR SOBRA */
+    /* https://www.cssmatic.com/box-shadow */
+
+    -webkit-box-shadow: 10px 10px 25px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 25px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 25px -11px rgba(0, 0, 0, 0.75);
+}
+
+/*.GRADIENT */
+.gradient {
+    /* FERRAMENTA P/ CRIAR GRADIENT */
+    /* https://cssgradient.io/ */
+
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0.7651435574229692) 0%,
+        rgba(0, 0, 0, 0.7511379551820728) 19%,
+        rgba(0, 0, 0, 0.07886904761904767) 100%
+    );
+}
+
+/*.OUTROS */
+.outros {
+    /*.TAMANHO DA FONTE (MINIMO-IDEAL-MAXIMO) */
+    font-size: clamp(58px, 5vw + 0.1rem, 200px);
+
+    /*.BLOQUEIA SELECÃO DE CÓPIA DE INPUT OU TEXTAREA */
+    pointer-events: none;
+
+    /*.BLOQUEIA REDIMENSIONAMENTO DE TEXTAREA */
+    resize: none;
+
+    /*.FORMATO DA DIV */
+    aspect-ratio: 16/9;
+
+    /*! https://www.w3schools.com/cssref/tryit.php?filename=trycss_text_white-space */
+    /*.NÃO PULA DE LINHA */
+    white-space: nowrap;
+    /*.OS ESPAÇOS EM BRANCO SERÃO PRESERVADOS */
+    white-space: pre;
+    /*.OS ESPAÇOS EM BRANCO SERÃO IGNORADOS */
+    white-space: normal;
+}
+
+/*.POSITION ABSOLUT */
+.posicionamento-absoluto {
+    inset: 0 0 0 0;
+    inset: auto auto 10% auto;
+    inset-inline: 50px;
+    inset-block: 50px;
+
+    inset: 0;
+    margin: auto;
+
+    /* INSET SUBSTITUI CSS ABAIXO */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/*.GRID-TEMPLATE-AREAS */
+/* https://youtu.be/B6tkqmMw6lA?t=2206 */
+.container {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 40px 180px 200px;
+    grid-template-areas:
+        "div1 div1 div1"
+        "div2 div2 div3"
+        "div4 div5 div3";
+    gap: 30px;
+
+    align-items: stretch;
+    justify-items: center;
+}
+
+.my_div1 {
+    grid-area: div1;
+}
+
+.my_div2 {
+    grid-area: div2;
+}
+
+.my_div3 {
+    grid-area: div3;
+}
+
+.my_div4 {
+    grid-area: div4;
+    align-self: start;
+    justify-self: center;
+}
+
+.my_div5 {
+    grid-area: div5;
+}
+
+.my_div6 {
+    grid-area: div6;
+}
+
+/*.FOCA "section" EM MAIS DESTAQUE */
+html {
+    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/*.SCROLL SUAVE */
+html {
+    scroll-behavior: smooth;
+}
+
+/*.CELULAR */
+@media (max-width: 768px) {
+    .teste {
+        margin-top: -10%;
+    }
+}
+
+/*.MODELOS DE CORES */
+.testeDeCor {
+    color: #777;
+    color: #3d3d3d;
+    color: #ff0080;
+    color: #00a2ff;
+    color: #00ffd5;
+    color: #48ff00;
+    color: #eeff00;
+    color: #ff00c8;
+    color: #ea00ff;
+    color: #ff4500;
+    color: #ff0000;
+}
+
+/*.MODELOS DE CORES #eeff00 */
+/*:MODELOS DE CORES #48ff00 */
+/**MODELOS DE CORES #ff4500 */
+/*-MODELOS DE CORES #00ffd5 */
+/*/MODELOS DE CORES #2b9900 */
+/*+MODELOS DE CORES #00a2ff */
+/*!MODELOS DE CORES #ff0000 */
+/*=MODELOS DE CORES #000000 #00ffd5 */

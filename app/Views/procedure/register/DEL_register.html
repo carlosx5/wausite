@@ -1,0 +1,155 @@
+<div class="container p-0">
+    <!-- CADASTRO -->
+    <div class="f_cadastre">
+        <div class="py-3 px-3" style="display: grid; grid-template-columns: 2fr 3fr 1fr">
+            <div style="width: 95%">
+                <div class="input-group">
+                    <span class="input-group-text">Procedimento</span>
+                    <input type="text" class="form-control" id="name" />
+                    <button type="button" class="btn btn-group btnFindProcedure"><i class="fa-light fa-folder-open"></i></button>
+                </div>
+            </div>
+            <div style="width: 60%">
+                <div class="input-group">
+                    <span class="input-group-text">Clínica</span>
+                    <input id="id_clinic" style="display: none" />
+                    <input type="text" class="form-control" id="nm_clinic" />
+                    <button type="button" class="btn btn-group btnFindClinic"><i class="fa-light fa-folder-open"></i></button>
+                </div>
+            </div>
+            <div style="width: 70%; justify-self: end">
+                <div class="input-group">
+                    <span class="input-group-text">Id</span>
+                    <input type="text" class="form-control text-center" id="id" disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIGURAÇÃO -->
+    <div class="f_config">
+        <div class="title_div px-3 py-2">Configuração</div>
+
+        <div class="f_clinic">
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Imposto</span>
+                    <input type="text" class="form-control pc" id="pc_tax" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="tax" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Comissão médico</span>
+                    <input type="text" class="form-control pc" id="pc_doctor" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="doctor" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Comissão agente</span>
+                    <input type="text" class="form-control pc" id="pc_agent" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="agent" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Coletador</span>
+                    <input type="text" class="form-control vl" id="vl_collector" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="collector" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Carimbo</span>
+                    <input type="text" class="form-control vl" id="vl_stamp" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="stamp" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">NTO</span>
+                    <input type="text" class="form-control vl" id="pc_nto" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="nto" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Operacional</span>
+                    <input type="text" class="form-control vl" id="vl_operational" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="operational" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Laboratório</span>
+                    <input type="text" class="form-control pc" id="pc_laboratory" />
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="laboratory" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content content_partiner">
+                <div class="input-group">
+                    <span class="input-group-text">Parceiro</span>
+                    <input type="text" class="form-control pc" id="pc_partner" />
+                </div>
+                <div class="input-group ms-2">
+                    <input id="id_partner" style="display: none" />
+                    <input type="text" class="form-control" id="nm_partner" disabled />
+                    <button type="button" class="btn btn-group btnPartner"><i class="fa-light fa-folder-open"></i></button>
+                </div>
+                <div class="d_btn">
+                    <button type="button" class="btn btn-group" data-field="partner" data-active="0">OK</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Valor tabela</span>
+                    <input type="text" class="form-control vl" id="vl_table" />
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <div class="content voucher_description">
+                <div class="input-group">
+                    <span class="input-group-text">Descrição voucher</span>
+                    <input type="text" class="form-control" id="voucher_description" />
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Imagem 1</span>
+                    <input type="text" class="form-control" id="img_1" />
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Imagem 2</span>
+                    <input type="text" class="form-control" id="img_2" />
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <span class="input-group-text">Imagem 3</span>
+                    <input type="text" class="form-control" id="img_3" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

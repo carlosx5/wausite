@@ -1,0 +1,123 @@
+.main {
+    width: 100%;
+    height: 100vh;
+
+    .img-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .img-cover {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .box-main {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 350px;
+            padding-left: 50px;
+            background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 40%);
+
+            .box-login {
+                width: 100%;
+                margin-top: 3vh;
+                padding-left: 50px;
+                color: #fff;
+
+                .content {
+                    margin-top: 15px;
+
+                    .logout {
+                        margin-top: 20px;
+                        cursor: pointer;
+                        text-align: left;
+                        color: red;
+                    }
+                }
+            }
+
+            .box-color {
+                margin-top: auto;
+
+                .title {
+                    text-align: center;
+                    font-size: 18px;
+                    color: white;
+                }
+
+                .options {
+                    display: flex;
+                    gap: 1rem;
+                    width: 15rem;
+                    margin-top: 10px;
+
+                    div {
+                        width: 3rem;
+                        height: 3rem;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &.verde {
+                            background-color: #00b1a2ff;
+                        }
+
+                        &.azul {
+                            background-color: #0072ff;
+                        }
+
+                        &.vinho {
+                            background-color: #830046;
+                        }
+
+                        &.rosa {
+                            background-color: #eb35b4ff;
+                        }
+                    }
+                }
+            }
+
+            .box-logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 100px;
+                margin-bottom: 50px;
+                gap: 1rem;
+                width: 15rem;
+
+                .logo {
+                    width: 100%;
+                }
+
+                .ia {
+                    width: 80%;
+                }
+            }
+        }
+
+        @media (max-width: 1600px) {
+            .box-logo {
+                gap: 1rem;
+                bottom: 1rem;
+                right: 1rem;
+                width: 10rem;
+
+                .logo {
+                    width: 100%;
+                }
+
+                .ia {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

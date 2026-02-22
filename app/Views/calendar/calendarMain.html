@@ -1,0 +1,50 @@
+<section class="container">
+    <!--+ MENU TOPO -->
+    <div id="menuTop">
+        <!--+ Left -->
+        <?=$this->include("templates/menuTopLeft.html")?>
+        <!--+ Filtros -->
+        <div class="left-calendar">
+            <div class="prof-group">
+                <div class="input-group">
+                    <span class="input-group-text color-wau2">
+                        <i class="fa-light fa-user-doctor-hair me-2 pb-1"></i>Profissional:
+                    </span>
+                    <input type="text" class="form-control" name="profName" readonly />
+                    <?php if ($findProfAccess): ?>
+                    <button class="btn color-wau2 filterProf" title="Filtra por médico">
+                        <i class="fa-light fa-folder-open"></i>
+                    </button>
+                    <button class="btn color-wau2 left-spacing setAllProfs" title="Exibe todos os profissionais">
+                        <i class="fa-light fa-users-medical"></i>
+                    </button>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <button class="btn color-wau2 newCalendar">
+                <i class="fa-light fa-calendar-circle-plus me-1"></i>Novo Agendamento
+            </button>
+        </div>
+
+        <!--+ Abas de menu -->
+        <div class="right justifyEnd">
+            <button class="btn btn-group register tab active">
+                <i class="fa-light fa-address-card"></i>
+                <p>Agenda</p>
+            </button>
+            <button class="btn btn-group record tab">
+                <i class="fa-light fa-address-card"></i>
+                <p>Atendimentos</p>
+            </button>
+        </div>
+    </div>
+
+    <!--+ MAIN -->
+    <div class="form-grow">
+        <!--+ CADASTRO -->
+        <div id="register" class="module-main" style="display: none">
+            <?=$this->include("calendar/register/calendarRegister.html")?>
+        </div>
+    </div>
+</section>

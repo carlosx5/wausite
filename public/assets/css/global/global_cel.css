@@ -1,0 +1,110 @@
+/* ********** SIDEBAR INICIO ********** */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 0px;
+    height: 100vh;
+    bottom: 0;
+    z-index: 1000;
+    background-color: var(--col9);
+    overflow-x: hidden;
+    border: 1px solid rgb(1, 102, 109);
+    transition: width .3s;
+}
+
+.sidebar_on {
+    width: 280px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* .sidebar {
+        transition: none;
+    } */
+}
+
+.sidebar-start {
+    top: 0;
+    left: 0;
+    width: 280px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.sidebar-body {
+    flex-grow: 1;
+    padding: 1rem 1rem;
+    overflow-y: auto;
+}
+
+.sidebar.show {
+    transform: none;
+}
+
+.sidebar li {
+    list-style-type: none;
+    margin: 8px 0;
+}
+
+.sidebar li a {
+    padding: 7px;
+    border-radius: 0 15px 15px 0;
+    display: block;
+    background: var(--col1);
+    color: var(--col2);
+    border: 1px solid var(--col1_1);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1.4em;
+}
+
+/* MENUS COM SUBMENUS */
+.sidebar .li_dropdown ul li {
+    padding: 0;
+    margin-top: 2px;
+}
+
+.sidebar .li_dropdown .subMenu a {
+    font-size: .9em;
+    margin-top: 2px;
+}
+
+.sidebar .subMenu {
+    display: none;
+}
+
+/* ICONES */
+.sidebar .fas,
+.sidebar .far,
+.sidebar .fab {
+    font-size: 25px;
+}
+
+.sidebar .fa-users {
+    font-size: 20px !important;
+}
+
+.sidebar .fa-clinic-medical,
+.sidebar .fa-first-aid {
+    font-size: 22px !important;
+}
+
+.sidebar .fa-caret-down {
+    font-size: 15px;
+    margin: 10px 0 0 10px
+}
+
+/* ********** SIDEBAR FIM ********** */
+
+.msg_template {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+}

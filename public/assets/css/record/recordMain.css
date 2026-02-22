@@ -1,0 +1,386 @@
+main {
+    overflow: hidden;
+}
+
+/*.......... LISTA */
+#list {
+    .left {
+        padding: 10px 3%;
+        font-family: var(--bs-font-sans-serif);
+
+        .list-item {
+            display: flex;
+            margin-top: 5px;
+            padding: 10px 30px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            background-color: #fff;
+
+            &:hover {
+                border-left: 4px solid #93c5fd;
+                border-color: #93c5fd;
+                box-shadow:
+                    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+
+            .date-box {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                flex: 1;
+                gap: 10px;
+                border-top: 1px solid var(--colorLight);
+            }
+
+            .btn-box {
+                display: flex;
+                gap: 10px;
+                margin-left: 20px;
+
+                .action-btn {
+                    display: flex;
+                    flex-direction: column;
+                    width: 65px;
+                    height: 58px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--colorMedium);
+                    border-color: var(--colorMedium);
+
+                    i {
+                        transition: transform 0.2s ease;
+                    }
+
+                    &:hover {
+                        border-width: 2px;
+                    }
+
+                    &:hover i {
+                        transform: scale(1.15);
+                    }
+
+                    .span-box {
+                        height: 60%;
+                        margin-top: auto;
+                        padding-top: 5px;
+                        /* border: 1px solid var(--colorLight); */
+
+                        p {
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        width: 400px;
+        padding: 10px 25px;
+    }
+
+    .view {
+        min-height: 10rem;
+        max-height: 70vh;
+        overflow-y: auto;
+        /*. Abaixo existe outros atributos para ".view" que servem tanto p/ "#list" quanto p/ "#register" */
+    }
+}
+
+/*.......... CADASTRO */
+#register {
+    color: var(--txtDark);
+
+    .left {
+        .edit {
+            flex-direction: column;
+            gap: 10px;
+            height: 100%;
+            padding: 10px 5%;
+
+            .mod-main {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: var(--body);
+                border: 1px solid #eeeeee;
+
+                &.show {
+                    background-color: var(--colorXLight);
+                }
+
+                &.textarea {
+                    .quillText {
+                        min-height: 200px;
+                        max-height: 400px;
+                    }
+                }
+
+                &.textlist {
+                    .mod-body {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px;
+                        background-color: var(--body);
+                    }
+                }
+
+                &.radio {
+                    .content {
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 20px;
+                    }
+                }
+
+                &.check {
+                    .content {
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 20px;
+                    }
+                }
+
+                &.numberlist {
+                    .content {
+                        .name {
+                            width: 145px;
+                        }
+
+                        .prefix {
+                            display: flex;
+                            justify-content: center;
+                            padding: 0;
+                            width: 40px;
+                        }
+                    }
+                }
+
+                .title-main {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 3px;
+                    padding: 0 20px;
+
+                    .left-box {
+                        display: flex;
+                        align-items: center;
+
+                        h6 {
+                            margin: 0;
+                            font-weight: 600;
+                            color: var(--label-color);
+                        }
+
+                        span {
+                            margin-left: 20px;
+                        }
+                    }
+
+                    .right-box {
+                        .btn {
+                            padding: 3px 10px;
+                        }
+                    }
+                }
+
+                h1 {
+                    font-size: 25px;
+                    color: var(--txtDark);
+                }
+
+                h2 {
+                    font-size: 20px;
+                    color: var(--txtDark);
+                }
+
+                h3 {
+                    font-size: 18px;
+                    color: var(--txtDark);
+                }
+
+                p {
+                    font-size: 16px;
+                    margin: 0;
+                    color: var(--txtDark);
+                }
+            }
+        }
+    }
+
+    .right {
+        width: 500px;
+        padding: 10px 25px;
+
+        .patient {
+            span {
+                width: 110px;
+            }
+        }
+
+        .modulesActives,
+        .modulesInactives {
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+
+                .module {
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
+                    padding: 0 10px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    color: var(--colorDark);
+                    border: 1px solid var(--border);
+
+                    &:active {
+                        cursor: move;
+                    }
+
+                    i {
+                        padding-bottom: 3px;
+                        color: var(--formHrText);
+
+                        &.fa-circle-sort {
+                            padding: 20px 0;
+                            margin-right: 15px;
+                            cursor: move;
+                        }
+                    }
+
+                    .form-switch {
+                        margin: 0;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.view {
+    flex-direction: column;
+    min-height: 100px;
+    padding: 10px 10%;
+    background-color: #fff;
+
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        margin-top: 20px;
+        color: var(--colorPrimary);
+    }
+
+    .header {
+        margin: 0;
+        text-align: left;
+        font-size: 25px;
+        font-weight: 600;
+        color: var(--colorDark);
+
+        hr {
+            height: 2px;
+            margin-top: 0;
+            background-color: var(--colorDark);
+            border: none;
+        }
+    }
+
+    .record {
+        .title {
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--txtDark);
+        }
+
+        .content {
+            h1 {
+                font-size: 25px;
+                color: var(--txtDark);
+            }
+
+            h2 {
+                font-size: 20px;
+                color: var(--txtDark);
+            }
+
+            h3 {
+                font-size: 18px;
+                color: var(--txtDark);
+            }
+
+            p {
+                font-size: 16px;
+                margin: 0;
+                color: var(--txtDark);
+            }
+        }
+    }
+
+    .li-div {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            margin-right: 15px;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    #list {
+        .left {
+            padding: 10px 35px;
+        }
+
+        .right {
+            display: none;
+        }
+    }
+
+    #register {
+        .left {
+            padding: 10px 5px;
+
+            .edit {
+                .mod-main {
+                    &.numberlist {
+                        .content {
+                            .item {
+                                padding-left: 3px;
+                                padding-right: 3px;
+
+                                .name {
+                                    width: 140px;
+                                }
+
+                                .prefix {
+                                    display: flex;
+                                    justify-content: center;
+                                    padding: 0;
+                                    width: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 400px;
+            padding: 5px;
+        }
+    }
+}

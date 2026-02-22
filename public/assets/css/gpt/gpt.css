@@ -1,0 +1,98 @@
+main {
+    padding: 0 300px;
+    color: #fff;
+}
+
+
+/*.CADASTRO */
+#register>div {
+    display: flex;
+    margin-top: 10px;
+    padding: 15px 30px;
+    border: 1px solid #9c9c9c;
+}
+
+#register>div .id {
+    margin-left: auto;
+}
+
+#register .content {
+    height: 300px;
+    padding: 30px;
+    border: 1px solid #9c9c9c;
+}
+
+#register .content textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+    font-size: 17px;
+    resize: none;
+    border: 1px solid #9c9c9c;
+}
+
+
+/*.PERGUNTA */
+#preview .group {
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    margin-top: 20px;
+    padding: 30px;
+    border: 1px solid #9c9c9c;
+}
+
+#preview .group div {
+    display: flex;
+    align-content: center;
+}
+
+#preview .group span {
+    display: flex;
+    align-items: center;
+    width: 110px;
+    font-size: 17px;
+}
+
+#preview .group input {
+    width: 80%;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #fff;
+    border: 1px solid #9c9c9c !important;
+}
+
+#preview .group input:read-only {
+    color: #9c9c9c;
+}
+
+#preview .group div:has(> input.inputInterest) {
+    margin-top: 5px;
+}
+
+#preview .group input.inputInterest {
+    color: #00c9c9;
+}
+
+
+/*.RESPOSTA */
+.response {
+    /* height: 230px; */
+    padding: 30px;
+    border: 1px solid #9c9c9c;
+}
+
+.response textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #9c9c9c;
+}
+
+.response .ias {
+    width: 100%;
+    padding: 10px;
+    color: #00c9c9;
+    border: 1px solid #9c9c9c;
+}

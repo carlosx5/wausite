@@ -1,0 +1,74 @@
+<div class="container vh-100" style="display: flex; flex-flow: column; padding-bottom: 10px">
+    <!-- MENU TOP -->
+    <div
+        class="f_menuTop"
+        style="display: grid; grid-template-columns: 500px 1fr; width: 100%; height: 60px; border-bottom: 1px solid #777"
+    >
+        <div></div>
+        <div class="right" style="display: flex; justify-content: center">
+            <div class="tab" style="background: #a400d6; cursor: default">
+                <p>Cadastro</p>
+            </div>
+            <div class="tab" style="margin-right: 30px; background: #9300c05e">
+                <p>Compras</p>
+            </div>
+
+            <div class="tab" data-tab="finance">
+                <p></p>
+            </div>
+            <div class="tab" data-tab="status">
+                <p></p>
+            </div>
+            <div class="tab" data-tab="status">
+                <p></p>
+            </div>
+            <div class="tab" data-tab="documents">
+                <p></p>
+            </div>
+            <div class="tab" data-tab="archives">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CADASTRO -->
+    <div class="f_register" style="display: flex; flex-flow: column; flex-basis: auto; padding: 20px 50px; border: 1px solid #777">
+        <div style="display: grid; grid-template-columns: 600px 400px 1fr 150px; gap: 20px">
+            <div class="input-group">
+                <span class="input-group-text">Estoque</span>
+                <input type="hidden" js="id_stock" />
+                <input type="text" class="form-control" js="name" />
+                <span class="input-group-text pointer"><i class="fa-light fa-folder-open"></i></span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Categoria</span>
+                <input js="id_category" style="display: none" />
+                <input type="text" class="form-control" js="nm_category" />
+            </div>
+            <div></div>
+            <div class="input-group">
+                <span class="input-group-text">ID</span>
+                <input type="text" class="form-control" js="id" />
+            </div>
+        </div>
+        <div class="mt-2" style="display: grid; grid-template-columns: 600px; gap: 20px">
+            <div class="input-group">
+                <span class="input-group-text">Fornecedor</span>
+                <input type="text" class="form-control" js="name" />
+                <span class="input-group-text pointer"><i class="fa-light fa-folder-open"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="f_register" style="display: flex; flex-flow: column; flex-grow: 1; padding: 20px 50px; border: 1px solid #777">
+        <div class="col-3">
+            <div class="input-group">
+                <span class="input-group-text">Quantidade</span>
+                <input type="text" class="form-control" js="name" />
+            </div>
+            <div class="input-group mt-2">
+                <span class="input-group-text">Valor</span>
+                <input type="text" class="form-control" js="name" />
+            </div>
+        </div>
+    </div>
+</div>

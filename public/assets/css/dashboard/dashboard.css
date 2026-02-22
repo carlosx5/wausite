@@ -1,0 +1,108 @@
+main {
+    background: var(--cl5);
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* SIDEBAR */
+.btn_sidebar.month .form-select {
+    text-align: center;
+    background-color: #000 !important;
+    border: unset !important;
+    color: #00cae0 !important;
+}
+
+.fa-funnel-dollar,
+.btn_sidebar {
+    color: #ff4500 !important;
+}
+
+.fa-funnel-dollar.active,
+.btn_sidebar.active {
+    color: #48ff00 !important;
+}
+
+.fa-funnel-dollar {
+    font-size: 18px !important;
+}
+
+
+/* MENU DO TOPO */
+.f_menuTop {
+    display: flex;
+    margin-top: 20px;
+    border-bottom: 2px solid #067f8c;
+}
+
+.f_right {
+    display: flex;
+    padding-left: 20px;
+}
+
+.f_right .tab {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-left: 1px;
+    padding-left: 10px;
+    border-radius: 10px 10px 0 0;
+    background: var(--cl3);
+    color: #fff;
+    cursor: pointer;
+}
+
+.f_right .tab:hover,
+.f_right .active {
+    background: var(--cl1);
+}
+
+
+/* GRÁFICO */
+.f_graphic {
+    flex-wrap: wrap;
+}
+
+.f_chart1 {
+    width: 100%;
+    padding: 10px;
+}
+
+.f_chart2 {
+    width: 40%;
+    border: 1px solid #b1b1b1
+}
+
+.f_chart3 {
+    width: 60%;
+    border: 1px solid #b1b1b1
+}
+
+#chart {
+    background: #181924;
+}
+
+
+/* DESPESAS */
+.f_expense {
+    flex-wrap: wrap;
+    align-content: start;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+.f_expense .fa-expand-arrows-alt,
+.f_expense .fa-calendar-check,
+.f_expense .fa-copy {
+    font-size: 20px;
+    color: #ff4500;
+    cursor: pointer;
+}
+
+.f_expense .fa-expand-arrows-alt {
+    margin-left: 10px;
+    font-size: 15px;
+}

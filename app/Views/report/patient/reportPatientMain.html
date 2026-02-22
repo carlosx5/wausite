@@ -1,0 +1,37 @@
+<section class="container">
+    <!--+ MENU TOPO -->
+    <div id="menuTop">
+        <!--+ Left -->
+        <?=$this->include("templates/menuTopLeft.html")?>
+        <!--+ Center -->
+        <div class="center">
+            <div class="save-box">
+                <button class="btn btn-primary tab save" disabled>
+                    <i class="fa-light fa-floppy-disk fa-lg"></i>
+                    <span>Atualizar</span>
+                </button>
+                <button class="btn btn-danger tab cancel" disabled>
+                    <i class="fa-light fa-ban fa-lg"></i>
+                    <span>Resseta</span>
+                </button>
+            </div>
+        </div>
+        <!--+ Right -->
+        <div class="right justifyEnd">
+            <?=$this->include("report/libraries/filter_period.html")?>
+            <?=$this->include("report/libraries/filter_clinic.html")?>
+            <button class="btn tab order" title="Ordenar">
+                <i class="fa-light"></i>
+            </button>
+            <button class="btn tab resset" title="Resseta">
+                <i class="fa-light fa-arrows-rotate-reverse fa-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--+ MAIN -->
+    <div class="form-grow">
+        <!--+ CADASTRO -->
+        <div id="list" class="module-main d-none"><?=$this->include("report/patient/list/reportPatientList.html")?></div>
+    </div>
+</section>

@@ -1,0 +1,262 @@
+#menuTop {
+    padding-right: 0;
+
+    .left {
+        min-width: 0;
+
+        input {
+            display: none;
+        }
+    }
+
+    .left-calendar {
+        align-self: flex-end;
+        display: flex;
+        width: 100%;
+        height: 42px;
+        margin-right: 50px;
+        /* border: 1px solid red; */
+
+        .prof-group {
+            margin-left: auto;
+        }
+
+        input {
+            width: 250px;
+            padding: 0 0 0 10px;
+        }
+
+        .newCalendar {
+            margin-left: 10px;
+            height: 38px;
+        }
+    }
+
+    .right .tab {
+        width: 160px;
+        cursor: default;
+    }
+}
+@media (max-width: 1600px) {
+    #menuTop {
+        .left-calendar {
+            margin-top: 7px;
+        }
+
+        .right .tab {
+            width: 200px;
+        }
+    }
+}
+
+.form-grow {
+    border-top-right-radius: 0;
+    border-top: 1px solid var(--border);
+}
+
+/*.......... CALENDÁRIO */
+#register {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        max-width: 80%;
+        padding: 10px;
+
+        /*. Alterações na biblioteca calendar.js */
+        .calendar {
+            width: 100%;
+            height: 100%;
+
+            .fc-toolbar-title {
+                color: var(--colorDark);
+            }
+
+            .fc-header-toolbar.fc-toolbar {
+                .fc-toolbar-chunk:first-child button {
+                    width: 70px;
+                    height: 40px;
+                }
+
+                .fc-toolbar-chunk:last-child button {
+                    width: 80px;
+                    height: 40px;
+                }
+
+                button {
+                    margin-left: 1px;
+                    box-shadow: none;
+
+                    &.fc-button-active {
+                        background-color: orangered;
+                        border-color: orangered;
+                    }
+
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+        padding: 10px 0.5vw;
+        border-left: 1px solid gray;
+        overflow-y: auto;
+
+        .tags {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+            margin-bottom: 20px;
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .list {
+            .box {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 5px;
+                padding: 10px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: var(--form-grow);
+                border: 1px solid grey;
+
+                .col1 {
+                    display: flex;
+                    padding: 10px 0;
+                    color: var(--txtDark);
+
+                    .name {
+                        font-weight: 600;
+                        color: var(--colorDark);
+                    }
+
+                    .date {
+                        margin-left: auto;
+                    }
+
+                    .down {
+                        margin-left: 20px;
+                        margin-top: -1px;
+                        padding: 0;
+                    }
+                }
+
+                .bot {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: var(--label-color);
+
+                    .prof {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+
+                        .btn {
+                            padding: 0 4px;
+                        }
+                    }
+
+                    .icons {
+                        display: flex;
+                        justify-content: end;
+                        gap: 5px;
+
+                        .btn {
+                            display: flex;
+                            justify-content: center;
+                            width: 40px;
+
+                            i {
+                                font-size: 20px;
+                            }
+
+                            &.msg {
+                                span {
+                                    margin-left: 3px;
+                                    margin-top: -3px;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card-body {
+                margin-top: 10px;
+                padding: 0;
+                border: none;
+                background-color: var(--form-grow);
+
+                .footer {
+                    display: flex;
+                    justify-content: center;
+                    gap: 5px;
+
+                    .btn {
+                        width: 120px;
+
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                span {
+                    width: 100px;
+                    background-color: var(--colorLight);
+                    color: #fff;
+                    border-color: var(--colorLight);
+                }
+            }
+        }
+    }
+
+    a {
+        color: var(--colorDark);
+        text-decoration: none;
+    }
+}
+
+#modalEdit {
+    .modal-header {
+        background-color: #f7f7f7ff;
+    }
+
+    .modal-body {
+        .dates-box {
+            padding-bottom: 10px;
+            background-color: #f7f7f7ff;
+            border: 1px solid #e2e2e2ff;
+            border-radius: 5px;
+        }
+    }
+
+    .modal-footer {
+        background-color: #f7f7f7ff;
+
+        .btn {
+            width: 120px;
+        }
+    }
+}
+
+.fc-timegrid-body tr {
+    height: 25px;
+}

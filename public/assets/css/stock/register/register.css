@@ -1,0 +1,13 @@
+/**********: MENU DO TOPO */
+#menuTop .right {
+    justify-content: end;
+}
+
+
+/**********: CADASTRO */
+#register {
+    flex-direction: column;
+    height: 90vh;
+    overflow: auto;
+    border: 1px solid #777;
+}

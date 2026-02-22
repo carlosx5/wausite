@@ -1,0 +1,54 @@
+{
+    "event": "messages.upsert",
+    "instance": "5511945966958",
+    "data": {
+        "key": {
+            "remoteJid": "5511989497692@s.whatsapp.net",
+            "remoteJidAlt": "161782995931154@lid",
+            "fromMe": false,
+            "id": "3EB0328B3F591860668B62",
+            "participant": "",
+            "addressingMode": "pn"
+        },
+        "pushName": "Carlos",
+        "status": "DELIVERY_ACK",
+        "message": {
+            "messageContextInfo": {
+                "threadId": [],
+                "deviceListMetadata": {
+                    "senderKeyIndexes": [],
+                    "recipientKeyIndexes": [],
+                    "senderKeyHash": [206, 203, 87, 137, 134, 188, 30, 118, 254, 121],
+                    "senderTimestamp": { "low": 1769857477, "high": 0, "unsigned": true },
+                    "senderAccountType": 0,
+                    "receiverAccountType": 0,
+                    "recipientKeyHash": [13, 73, 236, 249, 136, 217, 13, 139, 67, 214],
+                    "recipientTimestamp": { "low": 1769863763, "high": 0, "unsigned": true }
+                },
+                "deviceListMetadataVersion": 2,
+                "messageSecret": [
+                    48, 181, 84, 82, 206, 183, 93, 203, 208, 57, 69, 34, 109, 188, 3, 12, 27, 107, 157, 230, 160, 144, 177,
+                    236, 197, 67, 116, 50, 110, 0, 56, 42
+                ],
+                "limitSharingV2": { "trigger": 0, "initiatedByMe": false }
+            },
+            "conversation": "Teste29"
+        },
+        "contextInfo": {
+            "mentionedJid": [],
+            "groupMentions": [],
+            "statusAttributions": [],
+            "ephemeralSettingTimestamp": { "low": 1718734568, "high": 0, "unsigned": false },
+            "disappearingMode": { "initiator": 0, "trigger": 1, "initiatedByMe": false }
+        },
+        "messageType": "conversation",
+        "messageTimestamp": 1769874689,
+        "instanceId": "d913a8b9-7925-4950-8001-9c521a7b17d5",
+        "source": "web"
+    },
+    "destination": "https:\/\/wausaude.com.br\/api\/gti",
+    "date_time": "2026-01-31T12:51:29.202Z",
+    "sender": "5511945966958@s.whatsapp.net",
+    "server_url": "https:\/\/apivip.gti-api.com",
+    "apikey": "1869F6CD-507F-4ECA-B34E-35AC4AD361CA"
+}

@@ -1,0 +1,96 @@
+<!--+ BARRA DE NAVEGAÇÃO -->
+<div id="headerBar">
+    <div class="title">
+        <i class="fa-light fa-clipboard-medical me-3"></i>
+        <span>Prontuário do Paciente</span>
+    </div>
+    <div class="menu">
+        <button class="btn px-3 toggleViewEdit" data-method="toggleViewEdit">
+            <i class="fa-light fa-eye"></i>
+            <span>Modo visualizar</span>
+        </button>
+        <button class="btn px-3 finalizeRecord" data-method="finalizeRecord" disabled>
+            <i class="fa-light fa-file-lock"></i>
+            <span>Finalizar prontuário</span>
+        </button>
+        <button class="btn px-3 delete" data-method="delete">
+            <i class="fa-light fa-trash-can"></i>
+            <span>Deletar prontuário</span>
+        </button>
+        <button class="btn px-3 goModuleConfig" data-method="goModuleConfig">
+            <i class="fa-light fa-gear"></i>
+            <span>Configurar meus módulos</span>
+        </button>
+    </div>
+</div>
+
+<!--+ ESQUERDA -->
+<div class="left left-css">
+    <div class="edit"></div>
+    <div class="view scrollbar"></div>
+</div>
+
+<!--+ DIREITA -->
+<div class="right right-css">
+    <div class="patient d-none">
+        <div class="mt-1">
+            <div class="input-group">
+                <span class="input-group-text color-wau1">Paciente:</span>
+                <input type="text" class="form-control" name="name" readonly />
+                <button
+                    class="btn color-wau1 goRegister"
+                    data-bs-toggle="tooltip"
+                    data-bs-title="Vai p/ cadastro de paciente"
+                >
+                    <i class="fa-light fa-address-card fa-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mt-1">
+            <div class="input-group">
+                <span class="input-group-text color-wau1">CPF:</span>
+                <input type="text" class="form-control" name="cpf" readonly />
+            </div>
+        </div>
+        <div class="mt-1">
+            <div class="input-group">
+                <span class="input-group-text color-wau1">Emergência:</span>
+                <input type="text" class="form-control" name="phone_number" readonly />
+            </div>
+        </div>
+        <div class="mt-1">
+            <div class="input-group">
+                <span class="input-group-text color-wau1">Nascimento:</span>
+                <input type="date" class="form-control" name="birthday" readonly />
+            </div>
+        </div>
+        <div class="mt-1">
+            <div class="input-group">
+                <span class="input-group-text color-wau1">Idade:</span>
+                <input type="text" class="form-control" name="age" readonly />
+            </div>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target=".modulesActives">
+                    Módulos ativos
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse show modulesActives">
+                <div class="accordion-body list"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target=".modulesInactives">
+                    Módulos ocultos
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse show modulesInactives">
+                <div class="accordion-body list"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+<style>
+    .bank_register_module .modal-box {
+        width: 600px;
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+
+    .bank_register_module .title_div {
+        background: #fff;
+    }
+</style>
+
+<!-- ENTRADAS -->
+<div class="modal-box">
+    <input name="id" style="display: none" />
+    <input name="id_source" style="display: none" />
+
+    <button class="btn-close exit"><i class="fas fa-times"></i></button>
+
+    <div class="form-hr me-5">
+        <label>Lançamento</label>
+    </div>
+
+    <div class="mt-4 px-3">
+        <div class="title_border px-2 pb-2">
+            <div class="row g-0 pt-2">
+                <div class="col-9 pe-1">
+                    <label class="form-label m-0">Clínica</label>
+                    <input type="text" class="form-control" name="nm_clinic" data-lpignore="true" autocomplete="off" disabled />
+                </div>
+                <div class="col-3 ps-1">
+                    <label class="form-label m-0">Id</label>
+                    <input type="text" class="form-control" name="id_clinic" disabled />
+                </div>
+            </div>
+            <div class="row g-0 mt-1 pt-2">
+                <div class="col-9 pe-1">
+                    <label class="form-label m-0">Operador</label>
+                    <input type="text" class="form-control" name="nm_login" data-lpignore="true" autocomplete="off" disabled />
+                </div>
+                <div class="col-3 ps-1">
+                    <label class="form-label m-0">Id</label>
+                    <input type="text" class="form-control" name="id_login" disabled />
+                </div>
+            </div>
+        </div>
+
+        <div class="title_border px-2 pb-2 mt-2">
+            <div class="col-12 mt-2">
+                <label class="form-label m-0">Descrição</label>
+                <input type="text" class="form-control" name="modalDescription" data-lpignore="true" />
+            </div>
+            <div class="row g-0 mt-2">
+                <div class="col-8 pe-1">
+                    <label class="form-label m-0">Data</label>
+                    <input type="date" class="form-control" name="modalDate" />
+                </div>
+                <div class="col-4 ps-1">
+                    <label class="form-label m-0">Fechamento</label>
+                    <input type="text" class="form-control" name="month" />
+                </div>
+            </div>
+            <div class="row g-0 mt-2">
+                <div class="col-6 pe-1">
+                    <label class="form-label m-0">Valor</label>
+                    <input type="text" class="form-control" name="modalValue" data-lpignore="true" />
+                </div>
+                <div class="col-1 pe-1 text-center">
+                    <i class="fas fa-calculator mt-4" style="font-size: 27px" disabled></i>
+                </div>
+                <div class="col-5 ps-1">
+                    <label class="form-label m-0">Situação</label>
+                    <select class="form-select" aria-label="Default select example" name="modalAvailable" disabled>
+                        <option value="1" selected>Disponível</option>
+                        <option value="2">Vinculado</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ENTRY-1 -->
+            <div class="f_input1 row g-0 mt-2">
+                <input name="id" style="display: none" />
+                <div class="col-9 pe-1">
+                    <label class="nm_input1_category form-label m-0">ENTRY-SOURCE</label>
+                    <select class="form-select"></select>
+                </div>
+                <div class="col-3 ps-1">
+                    <label class="form-label m-0">Id</label>
+                    <input type="text" class="form-control" name="id_input1" disabled />
+                </div>
+            </div>
+
+            <!-- ENTRY-2 -->
+            <div class="f_input2 row g-0 mt-2">
+                <input name="id" style="display: none" />
+                <div class="col-9 pe-1">
+                    <label class="nm_input2_category form-label m-0">ENTRY-SOURCE</label>
+                    <select class="form-select"></select>
+                </div>
+                <div class="col-3 ps-1">
+                    <label class="form-label m-0">Id</label>
+                    <input type="text" class="form-control" name="id_input2" disabled />
+                </div>
+            </div>
+
+            <!-- ENTRY-3 -->
+            <div class="f_source row g-0 mt-2">
+                <div class="col-9 pe-1">
+                    <label class="nm_source_category form-label m-0">ENTRY-SOURCE</label>
+                    <select class="form-select"></select>
+                </div>
+                <div class="col-3 ps-1">
+                    <label class="form-label m-0">Id</label>
+                    <input type="text" class="form-control" name="id_source_category" disabled />
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-around gap-5 mt-4 px-3">
+            <button class="btn btn-primary w-50 save" disabled>Salvar</button>
+            <button class="btn btn-secondary w-50 exit">Cancelar</button>
+        </div>
+    </div>
+</div>

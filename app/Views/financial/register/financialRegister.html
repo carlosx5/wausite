@@ -1,0 +1,91 @@
+<!--+ BARRA DE NAVEGAÇÃO -->
+<div id="headerBar">
+    <div class="title">
+        <i class="fa-light fa-file-invoice-dollar me-3"></i>
+        <span>Financeiro do Paciente</span>
+    </div>
+    <div class="menu">
+        <button class="btn btn-headerBar search"><i class="fa-light fa-folder-open"></i>Busca Paciente</button>
+        <button class="btn btn-headerBar newBank"><i class="fa-light fa-circle-plus"></i>Novo Banco</button>
+        <button class="btn btn-headerBar newPlan"><i class="fa-light fa-circle-plus"></i>Novo Convênio</button>
+    </div>
+</div>
+
+<div class="left left-css">
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Data</th>
+                <th scope="col">Procedimento</th>
+                <th scope="col">Profissional</th>
+                <th scope="col">Vl. Total</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="right right-css">
+    <!--+ PAINEL FINANCEIRO-->
+    <div class="painel-financeiro p-4">
+        <div class="linha-gradiente top"></div>
+
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+            <!-- Total OS -->
+            <div class="w-100 d-flex align-items-center gap-3">
+                <div class="icone-box bg-azul-claro">
+                    <i class="bi bi-file-earmark-text-fill"></i>
+                </div>
+                <div>
+                    <div class="rotulo text-primary">Total OS</div>
+                    <h5 class="mb-0 fw-bold text-primary balanceOs">...</h5>
+                </div>
+            </div>
+
+            <!-- Divisor -->
+            <div class="divisor"></div>
+
+            <!-- Total Pago -->
+            <div class="w-100 d-flex align-items-center gap-3">
+                <div class="icone-box bg-verde-claro">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div>
+                    <div class="rotulo text-success">Total Pago</div>
+                    <h5 class="mb-0 fw-bold text-success balancePaid">...</h5>
+                </div>
+            </div>
+
+            <!-- Divisor -->
+            <div class="divisor"></div>
+
+            <!-- Saldo -->
+            <div class="w-100 d-flex align-items-center gap-3">
+                <div class="icone-box bg-amarelo-claro">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                </div>
+                <div>
+                    <div class="rotulo text-warning" style="color: #b8860b !important">Saldo</div>
+                    <h5 class="mb-0 fw-bold text-warning balanceTotal" style="color: #d39e00 !important">...</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="linha-gradiente bottom"></div>
+    </div>
+
+    <!--+ TABELA-->
+    <table class="table align-middle mt-2">
+        <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Banco</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

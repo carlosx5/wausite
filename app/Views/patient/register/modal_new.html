@@ -1,0 +1,30 @@
+<style>
+    .modal-new .modal-box {
+        top: 10%;
+        width: 400px;
+        padding: 30px;
+        padding-top: 40px;
+    }
+</style>
+
+<div class="modal-box">
+    <button class="btn-close exit"><i class="fas fa-times"></i></button>
+
+    <div class="form-hr me-5">
+        <label>Novo Paciente</label>
+    </div>
+
+    <!-- <h2 class="modal-title">Novo Paciente</h2> -->
+
+    <label class="modal-label mt-4">CPF</label>
+    <input type="text" class="mt-1" name="cpf" placeholder="Digite o CPF" mask="cpf" autocomplete="new-password" />
+
+    <label class="modal-label mt-4">Agente</label>
+    <input type="hidden" name="agentId" />
+    <input type="text" class="mt-1" name="agentName" readonly />
+
+    <div class="d-flex justify-content-end gap-3 mt-5">
+        <button class="btn btn-primary w-35 confirm">Confirmar</button>
+        <button class="btn btn-secondary w-35 exit">Cancela</button>
+    </div>
+</div>

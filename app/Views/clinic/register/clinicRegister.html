@@ -1,0 +1,193 @@
+<div id="headerBar">
+    <div>
+        <span>Clínicas</span>
+        <i class="fa-light fa-arrow-right-long mx-2"></i>
+        <i class="fa-light fa-address-card ms-2 me-1"></i>
+        <span>Cadastro</span>
+    </div>
+    <div class="menu">
+        <button class="btn btn-headerBar search"><i class="fa-light fa-folder-open"></i>Busca Clínica</button>
+        <button class="btn btn-headerBar new"><i class="fa-light fa-folder-plus"></i>Nova Unidade</button>
+        <button class="btn btn-headerBar block"><i class="fa-light fa-diamond-exclamation"></i>Bloqueia Unidade</button>
+    </div>
+</div>
+
+<div class="left left-css">
+    <!--+ CADASTRO -->
+    <div class="row">
+        <input type="hidden" name="id" disabled />
+        <div class="col-4">
+            <label>Rasão Social</label>
+            <input type="text" class="form-control" name="name_corporate" maxlength="60" required />
+        </div>
+        <div class="col-3">
+            <label>Nome Fantasia</label>
+            <input type="text" class="form-control" name="name_trading" maxlength="40" required />
+        </div>
+        <div class="col-2">
+            <label>Nome da Unidade</label>
+            <input type="text" class="form-control" name="name_social" maxlength="40" required />
+        </div>
+        <div class="col-2">
+            <label>Status</label>
+            <select class="form-select" name="status" disabled>
+                <option value="1">Ativo</option>
+                <option value="2">Inativo</option>
+            </select>
+        </div>
+        <div class="col-1">
+            <label>Registro</label>
+            <input type="text" class="form-control text-center" js="displayId" readonly />
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3">
+            <label>CNPJ</label>
+            <input type="text" class="form-control" name="cnpj" maxlength="20" />
+        </div>
+        <div class="col-2">
+            <label>DDI - Telefone</label>
+            <div class="d-flex gap-1">
+                <input
+                    type="text"
+                    class="form-control text-center"
+                    name="phone_ddi"
+                    mask="phone"
+                    mask-type="ddi"
+                    placeholder="55"
+                    style="width: 55px"
+                    required
+                />
+                <input
+                    type="text"
+                    class="form-control"
+                    name="phone_number"
+                    mask="phone"
+                    placeholder="11 99999-9999"
+                    required
+                />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-2">
+            <label>CEP</label>
+            <input type="text" class="form-control" name="address_zip" id="address_zip" mask="zip" />
+        </div>
+        <div class="col-6">
+            <label>Endereço</label>
+            <input type="text" class="form-control" name="address" />
+        </div>
+        <div class="col-2">
+            <label>Número</label>
+            <input type="text" class="form-control" name="address_number" />
+        </div>
+        <div class="col-2">
+            <label>Complemento</label>
+            <input type="text" class="form-control" name="address_complement" />
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-4">
+            <label>Bairro</label>
+            <input type="text" class="form-control" name="address_neighb" />
+        </div>
+        <div class="col-4">
+            <label>Cidade</label>
+            <input type="text" class="form-control" name="address_city" />
+        </div>
+        <div class="col-2">
+            <label>Estado</label>
+            <input type="text" class="form-control" name="address_state" />
+        </div>
+        <div class="col-2">
+            <label>País</label>
+            <input type="text" class="form-control" name="coutry" mask="string" mask-type="1" />
+        </div>
+    </div>
+
+    <!--+ HORÁRIOS -->
+    <div class="form-hr mt-5">
+        <label>Horários de Funcionamento:</label>
+    </div>
+    <div class="mt-4 time">
+        <div class="workTime">
+            <p>Horario Comercial</p>
+            <div>
+                <label>Abre</label>
+                <input type="time" class="form-control" name="workTimeStart" />
+            </div>
+            <div>
+                <label>Fecha</label>
+                <input type="time" class="form-control" name="workTimeEnd" />
+            </div>
+        </div>
+        <div class="weekTime">
+            <p>Final de Semana</p>
+            <div>
+                <label>Semana Inicio</label>
+                <select class="form-select" name="weekDayStart">
+                    <option value=""></option>
+                    <option value="segunda">segunda</option>
+                    <option value="terça">terça</option>
+                    <option value="quarta">quarta</option>
+                    <option value="quinta">quinta</option>
+                    <option value="sexta">sexta</option>
+                    <option value="sabado">sabado</option>
+                    <option value="domingo">domingo</option>
+                </select>
+            </div>
+            <div>
+                <label>Hora Inicio</label>
+                <input type="time" class="form-control" name="weekTimeStart" />
+            </div>
+            <div>
+                <label>Semana Fim</label>
+                <select class="form-select" name="weekDayEnd">
+                    <option value=""></option>
+                    <option value="segunda">segunda</option>
+                    <option value="terça">terça</option>
+                    <option value="quarta">quarta</option>
+                    <option value="quinta">quinta</option>
+                    <option value="sexta">sexta</option>
+                    <option value="sabado">sabado</option>
+                    <option value="domingo">domingo</option>
+                </select>
+            </div>
+            <div>
+                <label>Hora Fim</label>
+                <input type="time" class="form-control" name="weekTimeEnd" />
+            </div>
+        </div>
+    </div>
+
+    <!--+ CONFIGURAÇÕES -->
+    <div class="form-hr mt-5">
+        <label>Configurações de Sistema:</label>
+    </div>
+    <div class="row pt-3 px-3">
+        <div class="col-2">
+            <label>DDI - Telefone</label>
+            <div class="d-flex gap-1">
+                <input
+                    type="text"
+                    class="form-control text-center"
+                    name="sisPhone_ddi"
+                    mask="phone"
+                    mask-type="ddi"
+                    placeholder="55"
+                    style="width: 55px"
+                    required
+                />
+                <input
+                    type="text"
+                    class="form-control"
+                    name="sisPhone_number"
+                    mask="phone"
+                    placeholder="11 99999-9999"
+                    required
+                />
+            </div>
+        </div>
+    </div>
+</div>

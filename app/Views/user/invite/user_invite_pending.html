@@ -1,0 +1,44 @@
+<style>
+    .fa-share-square {
+        font-size: 22px;
+    }
+
+    .send {
+        cursor: pointer;
+    }
+</style>
+
+<div class="container h-100 py-3">
+    <div class="bdGrey h-100 pb-3 px-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Convidante</th>
+                    <th class="text-center" scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($list as $l): ?>
+                <tr data-cell="<?=$l['cell']?>" data-link="<?=$l['link']?>">
+                    <td>
+                        <?=$l['name']?>
+                    </td>
+                    <td>
+                        <?=$l['cell']?>
+                    </td>
+                    <td>
+                        <?=$l['inviting']?>
+                    </td>
+                    <td class="text-center">
+                        <i class="fas fa-share-square send" help="Reenvia link de convite."></i>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <?=$this->include("templates/footer_help.html")?>
+</div>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                outline: 0;
+                box-sizing: border-box;
+            }
+
+            .camera-box,
+            .finished-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                overflow: hidden;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            }
+
+            .video-box {
+                position: relative;
+                width: 100%;
+                height: 80%;
+            }
+
+            .finished-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -20px;
+            }
+
+            #video {
+                width: 100%;
+                height: 100%;
+            }
+
+            .flash {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                background-color: transparent;
+            }
+
+            .flash.start {
+                opacity: 0;
+                background-color: white;
+                transition: opacity 0.2s ease;
+            }
+
+            #canvas {
+                width: 100%;
+            }
+
+            #btnCapture,
+            #btnStop {
+                display: inline-block;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: middle;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                background-color: transparent;
+                border: 1px solid transparent;
+                padding: 0.5rem 1.2rem;
+                font-size: 1rem;
+                border-radius: 0.25rem;
+                color: #fff;
+                background-color: blue;
+            }
+
+            #btnStop {
+                background-color: red;
+            }
+
+            .console {
+                padding: 10px;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="camera-box">
+            <div class="video-box">
+                <video id="video" autoplay></video>
+                <div class="flash p-5"></div>
+            </div>
+            <canvas id="canvas" style="display: none"></canvas>
+            <div class="buttons">
+                <button id="btnCapture">Envia imagem</button>
+                <button id="btnStop">Fechar câmera</button>
+                <!-- <button id="btnTeste">Teste</button> -->
+            </div>
+            <!-- <div class="console"></div> -->
+        </div>
+
+        <div class="finished-box" style="display: none">
+            <div class="img">
+                <img src="<?= base_url('dataSistem/images/more/camera01.png') ?>" />
+            </div>
+            <h2>Câmera encerrada!</h2>
+        </div>
+
+        <script src="<?= base_url('assets/js/api/image/setImage.js?v='.uniqid()) ?>"></script>
+        <script>
+            window.CSRF_TOKEN = "<?= csrf_hash() ?>";
+        </script>
+    </body>
+</html>

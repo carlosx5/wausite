@@ -1,0 +1,504 @@
+<!--+ BARRA DE NAVEGAÇÃO -->
+<div id="headerBar">
+    <div class="title">
+        <i class="fa-light fa-files-medical me-3"></i>
+        <span>...</span>
+    </div>
+    <div class="menu">
+        <button class="btn btn-headerBar down" data-target="procedure">
+            <i class="fa-regular fa-arrow-down-to-line"></i>
+            <span>Procedimentos</span>
+        </button>
+        <button class="btn btn-headerBar down" data-target="stock">
+            <i class="fa-regular fa-arrow-down-to-line"></i>
+            <span>Estoque</span>
+        </button>
+        <button class="btn btn-headerBar down" data-target="comiss">
+            <i class="fa-regular fa-arrow-down-to-line"></i>
+            <span>Comissões</span>
+        </button>
+        <button class="btn btn-headerBar down" data-target="partner">
+            <i class="fa-regular fa-arrow-down-to-line"></i>
+            <span>Participações</span>
+        </button>
+        <button class="btn btn-headerBar down" data-target="financial">
+            <i class="fa-regular fa-arrow-down-to-line"></i>
+            <span>Financeiro</span>
+        </button>
+
+        <button class="btn btn-headerBar ms-4 all-up">
+            <i class="fa-regular fa-arrows-up-to-line"></i>
+        </button>
+        <button class="btn btn-headerBar all-down">
+            <i class="fa-regular fa-arrows-down-to-line"></i>
+        </button>
+
+        <button class="btn btn-headerBar ms-4 delete" title="Deleta serviço">
+            <i class="fa-regular fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+
+<!--+ Left -->
+<div class="left-main left-css scllbar">
+    <div class="accordion">
+        <!--+ Procedimentos -->
+        <div class="accordion-item procedure-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="procedure">
+                    <span>Procedimentos</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Unitário</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--+ Entrada de novo procedimento -->
+                    <div class="d-flex justify-content-end gap-2 procedure-new">
+                        <!--+ Imput externo -->
+                        <div class="external-box w-50 gap-2 d-flex d-none">
+                            <input
+                                class="form-control w-50 procedureExternal"
+                                placeholder="Digite a descrição..."
+                                maxlength="25"
+                            />
+                            <input
+                                class="form-control w-25 procedureExternalSale"
+                                placeholder="Valor venda..."
+                                maxlength="10"
+                            />
+                            <button class="btn btn-success send"><i class="fa-classic fa-check"></i></button>
+                        </div>
+                        <!--+ Imput sistema -->
+                        <div class="sistem-box w-50 gap-2 d-flex d-none">
+                            <input
+                                class="form-control datalistProcedure"
+                                list="datalistProcedure"
+                                placeholder="Digite o procedimento no sistema..."
+                            />
+                            <datalist id="datalistProcedure"></datalist>
+                        </div>
+
+                        <!--+ Botão externo -->
+                        <button class="btn color-wau2 addExternalProcedure d-none" title="Novo procedimento avulso">
+                            <i class="fa-classic fa-plus me-1"></i>Externo
+                        </button>
+                        <!--+ Botão sistema -->
+                        <button class="btn color-wau2 addSystemProcedure d-none" title="Novo procedimento cadastrado">
+                            <i class="fa-classic fa-plus me-1"></i>Sistema
+                        </button>
+                        <!--+ Botão cancelar -->
+                        <button class="btn btn-danger cancel d-none"><i class="fa-classic fa-hand me-1"></i>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Estoque -->
+        <div class="accordion-item stock-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-main="stock">
+                    <span>Estoque</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Unitário</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--+ Entrada de novo estoque -->
+                    <div class="d-flex justify-content-end gap-2 stock-new">
+                        <!--+ Imput externo -->
+                        <div class="external-box w-50 gap-2 d-flex d-none">
+                            <input
+                                class="form-control w-50 stockExternal"
+                                placeholder="Digite a descrição..."
+                                maxlength="25"
+                            />
+                            <input
+                                class="form-control w-25 stockExternalPurchase"
+                                placeholder="Valor custo..."
+                                maxlength="10"
+                            />
+                            <input class="form-control w-25 stockExternalSale" placeholder="Valor venda..." maxlength="10" />
+                            <button class="btn btn-success send"><i class="fa-classic fa-check"></i></button>
+                        </div>
+                        <!--+ Imput sistema -->
+                        <div class="sistem-box w-50 gap-2 d-flex d-none">
+                            <input
+                                class="form-control datalistStock"
+                                list="datalistStock"
+                                placeholder="Digite o estoque no sistema..."
+                            />
+                            <datalist id="datalistStock"></datalist>
+                        </div>
+
+                        <!--+ Botão externo -->
+                        <button class="btn color-wau2 addExternalStock d-none" title="Novo estoque avulso">
+                            <i class="fa-classic fa-plus me-1"></i>Externo
+                        </button>
+                        <!--+ Botão sistema -->
+                        <button class="btn color-wau2 addSystemStock d-none" title="Novo estoque cadastrado">
+                            <i class="fa-classic fa-plus me-1"></i>Sistema
+                        </button>
+                        <!--+ Botão cancelar -->
+                        <button class="btn btn-danger cancel d-none"><i class="fa-classic fa-hand me-1"></i>Cancelar</button>
+                        <!--+ Botão lançar estoque -->
+                        <button class="btn allStockBack" title="Retorna todo estoque">
+                            <i class="fa-classic fa-backward me-2"></i>Retorna
+                        </button>
+                        <button class="btn allStockOut" title="Sai todo estoque">
+                            Saída<i class="fa-classic fa-forward ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Comissão -->
+        <div class="accordion-item comiss-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-main="comiss">
+                    <span>Comissões</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Profissional</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">%</th>
+                                <th scope="col">Comissão</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--+ Entrada de novo profissional -->
+                    <div class="d-flex justify-content-end gap-1 comiss-new">
+                        <!--+ Imput externo -->
+                        <div class="external-box w-50 d-none">
+                            <input
+                                class="form-control comissProfExternal"
+                                placeholder="Digite o profissional externo..."
+                                maxlength="25"
+                            />
+                        </div>
+                        <!--+ Imput sistema -->
+                        <div class="sistem-box w-50 d-none">
+                            <input
+                                class="form-control datalistComiss"
+                                list="datalistComiss"
+                                placeholder="Digite o profissional no sistema..."
+                            />
+                            <datalist id="datalistComiss"></datalist>
+                        </div>
+
+                        <!--+ Botão externo -->
+                        <button class="btn color-wau2 addExternalProfessional d-none" title="Adicionar profissional externo">
+                            <i class="fa-light fa-plus me-1"></i>Externo
+                        </button>
+                        <!--+ Botão sistema -->
+                        <button
+                            class="btn color-wau2 addSystemProfessional d-none"
+                            title="Adicionar profissional cadastrado"
+                        >
+                            <i class="fa-light fa-plus me-1"></i>Sistema
+                        </button>
+                        <!--+ Botão cancelar -->
+                        <button class="btn btn-danger cancel d-none"><i class="fa-light fa-hand me-1"></i>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Participações -->
+        <div class="accordion-item partner-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-main="partner">
+                    <span>Participações</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">%</th>
+                                <th scope="col">Participação</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--+ Entrada de novo parceiro -->
+                    <div class="d-flex justify-content-end gap-1 partner-new">
+                        <!--+ Imput externo -->
+                        <div class="external-box w-50 d-none">
+                            <input
+                                class="form-control partnerExternal"
+                                placeholder="Digite o participante externo..."
+                                maxlength="25"
+                            />
+                        </div>
+                        <!--+ Imput sistema -->
+                        <div class="sistem-box w-50 d-none">
+                            <input
+                                class="form-control datalistPartner"
+                                list="datalistPartner"
+                                placeholder="Digite a clinica no sistema..."
+                            />
+                            <datalist id="datalistPartner"></datalist>
+                        </div>
+
+                        <!--+ Botão externo -->
+                        <button class="btn color-wau2 addExternalPartner d-none" title="Adicionar participante externo">
+                            <i class="fa-light fa-plus me-1"></i>Externo
+                        </button>
+                        <!--+ Botão sistema -->
+                        <button class="btn color-wau2 addSystemPartner d-none" title="Adicionar clínica cadastrado">
+                            <i class="fa-light fa-plus me-1"></i>Sistema
+                        </button>
+                        <!--+ Botão cancelar -->
+                        <button class="btn btn-danger cancel d-none"><i class="fa-light fa-hand me-1"></i>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Financeiro -->
+        <div class="accordion-item financial-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-main="financial">
+                    <span>Financeiro</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">valor</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <!--+ Entrada de novo parceiro -->
+                    <div class="d-flex justify-content-end gap-1 partner-new">
+                        <!--+ Imput externo -->
+                        <div class="external-box w-50 d-none">
+                            <input
+                                class="form-control partnerExternal"
+                                placeholder="Digite o participante externo..."
+                                maxlength="25"
+                            />
+                        </div>
+                        <!--+ Imput sistema -->
+                        <div class="sistem-box w-50 d-none">
+                            <input
+                                class="form-control datalistPartner"
+                                list="datalistPartner"
+                                placeholder="Digite a clinica no sistema..."
+                            />
+                            <datalist id="datalistPartner"></datalist>
+                        </div>
+
+                        <!--+ Botão externo -->
+                        <button class="btn color-wau2 addExternalPartner d-none" title="Adicionar participante externo">
+                            <i class="fa-light fa-plus me-1"></i>Externo
+                        </button>
+                        <!--+ Botão sistema -->
+                        <button class="btn color-wau2 addSystemPartner d-none" title="Adicionar clínica cadastrado">
+                            <i class="fa-light fa-plus me-1"></i>Sistema
+                        </button>
+                        <!--+ Botão cancelar -->
+                        <button class="btn btn-danger cancel d-none"><i class="fa-light fa-hand me-1"></i>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--+ Right -->
+<div class="right-main right-css scllbar">
+    <div class="accordion">
+        <!--+ Procedimentos -->
+        <div class="accordion-item procedure-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="procedure">
+                    <span>Procedimentos</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Tabela:</span>
+                        <input class="form-control" name="vl_procedureTable" mask="number" readonly />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Desconto:</span>
+                        <input class="form-control discount" name="vl_procedureDiscount" mask="number" />
+                        <input class="form-control discount" name="pc_procedureDiscount" mask="number" mask-type="2,,%" />
+                        <button class="btn color-wau1 wms-1 discount">
+                            <i class="fa-regular fa-right-left-large"></i>
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Total:</span>
+                        <input class="form-control" name="vl_procedureTotal" mask="number" readonly />
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <span class="input-group-text color-wau1">Imposto:</span>
+                        <input class="form-control tax" name="vl_procedureTax" mask="number" />
+                        <input class="form-control tax" name="pc_procedureTax" mask="number" mask-type="2,,%" />
+                        <button class="btn color-wau1 wms-1 tax"><i class="fa-regular fa-right-left-large"></i></button>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Margem:</span>
+                        <input class="form-control" name="vl_procedureMargin" mask="number" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Estoque -->
+        <div class="accordion-item stock-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="stock">
+                    <span>Estoque</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Tabela:</span>
+                        <input class="form-control" name="vl_stockTable" mask="number" readonly />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Desconto:</span>
+                        <input class="form-control discount" name="vl_stockDiscount" mask="number" />
+                        <input class="form-control discount" name="pc_stockDiscount" mask="number" mask-type="2,,%" />
+                        <button class="btn color-wau1 wms-1 discount">
+                            <i class="fa-regular fa-right-left-large"></i>
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Total:</span>
+                        <input class="form-control" name="vl_stockTotal" mask="number" readonly />
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <span class="input-group-text color-wau1">Imposto:</span>
+                        <input class="form-control tax" name="vl_stockTax" mask="number" />
+                        <input class="form-control tax" name="pc_stockTax" mask="number" mask-type="2,,%" />
+                        <button class="btn color-wau1 wms-1 tax"><i class="fa-regular fa-right-left-large"></i></button>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Custo:</span>
+                        <input class="form-control" name="vl_stockCost" mask="number" readonly />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Margem:</span>
+                        <input class="form-control" name="vl_stockMargin" mask="number" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Comissões -->
+        <div class="accordion-item comiss-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="comiss">
+                    <span>Comissões</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Total:</span>
+                        <input class="form-control" name="vl_comissTotal" mask="number" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Participações -->
+        <div class="accordion-item partner-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="partner">
+                    <span>Participações</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Total:</span>
+                        <input class="form-control" name="vl_partnerTotal" mask="number" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Financeiro -->
+        <div class="accordion-item financial-main">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-main="financial">
+                    <span>Financeiro</span>
+                    <h6>0,00</h6>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="input-group">
+                        <span class="input-group-text color-wau1">Total:</span>
+                        <input class="form-control" name="vl_financialTotal" mask="number" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

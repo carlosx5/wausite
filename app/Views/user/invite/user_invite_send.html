@@ -1,0 +1,40 @@
+<div class="f_send">
+    <div class="message px-3 pb-3">Preencha os campos abaixo para fazer um novo convite para {actingName}.</div>
+
+    <div class="content mt-5 px-4 pb-5 bdGrey">
+        <p class="title">Dados do {actingName}</p>
+        <div class="msg_template"></div>
+        <div class="mt-4">
+            <label>Nome</label>
+            <input type="text" class="form-control" name="name" />
+        </div>
+        <div class="mt-2">
+            <label>Celular</label>
+            <input type="text" class="form-control" name="cell" placeholder="11 99999-9999" />
+        </div>
+        <div class="select mt-2">
+            <div id="as_clinic">
+                <label class="form-label m-0">Clínica</label>
+                <input type="text" class="form-control" name="nm_clinic" autocomplete="off" />
+                <input name="id_clinic" style="display: none" />
+                <div class="tpt"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around mt-4 p-2 bdGrey">
+        <button class="btn btn-arc w-50 me-2 py-3 btnSend">Enviar</button>
+        <button class="btn btn-arc w-50 ms-2 py-3 btnCancel">Cancelar</button>
+    </div>
+</div>
+<div class="f_finish">
+    <div class="d_img">
+        <img class="img-fluid" src="{logoLab}" />
+    </div>
+    <div class="message mt-5 pt-2 px-4">
+        O convite para o novo {actingName} foi enviado. O sistema agora aguarda a confirmação do {actingName} para efetivar o cadastro.
+    </div>
+    <div class="d_btn w-100 mt-5 px-3">
+        <button class="btn btn-arc w-100 py-3 btnBack">Voltar</button>
+    </div>
+</div>

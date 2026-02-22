@@ -1,0 +1,138 @@
+<div class="modal py-3">
+    <!-- +ENTRADAS -->
+    <div class="f_in pb-3 bdGrey">
+        <!-- +TITULO -->
+        <div class="top">
+            <div class="txt">Bancos:</div>
+        </div>
+        <!-- +ADD -->
+        <div class="add addBank">
+            <div class="grid gridBank">
+                <div class="mod">Banco:</div>
+                <div class="">
+                    <input type="date" class="form-control text-center" id="dt_bank_md8" />
+                </div>
+                <div class="select">
+                    <div class="as_bank">
+                        <input type="text" class="form-control" id="nm_bank_md8" placeholder="digite o banco" />
+                        <input type="hidden" id="id_bank_md8" />
+                        <div class="tpt"></div>
+                    </div>
+                </div>
+                <div class="value">
+                    <input type="text" class="form-control" id="vl_bank_md8" placeholder="valor" />
+                </div>
+                <div class="flex-center">
+                    <i class="fas fa-sign-in-alt f25" id="btnNewBank_md8"></i>
+                </div>
+            </div>
+        </div>
+        <!-- +LISTA -->
+        <div class="scrollbar">
+            <!-- +LISTA DE BANCO -->
+            <div class="listBank"></div>
+            <!-- +TOTAL -->
+            <div class="total">
+                <div class="txt">
+                    <p>Total:</p>
+                </div>
+                <div class="value">
+                    <input type="text" class="form-control total_value" mask="number" readonly />
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- +SAIDAS -->
+    <div class="f_out pb-3 bdGrey">
+        <!-- +TITULO -->
+        <div class="top">
+            <div>
+                <div class="txt">Lançamentos:</div>
+            </div>
+            <div>
+                <button class="btn os" data-mode="os">OS</button>
+                <button class="btn expense" data-mode="expense">Despesa</button>
+                <button class="btn supplier" data-mode="supplier">Fornecedor</button>
+            </div>
+        </div>
+        <!-- +ADD OS -->
+        <div class="add addOs">
+            <div class="grid gridOs">
+                <div class="mod">OS:</div>
+                <div class="">
+                    <input type="text" class="form-control text-center" id="idOs_md8" placeholder="nº OS" />
+                </div>
+                <div class="justify-content-start align-content-center ms-2">
+                    <i class="fas fa-sign-in-alt f25 btnNewOs"></i>
+                </div>
+            </div>
+        </div>
+        <!-- +ADD DESPESA -->
+        <div class="add addExpense">
+            <div class="grid gridExpense">
+                <div class="mod">Despesa:</div>
+                <div class="select">
+                    <div class="as_expense">
+                        <input type="text" class="form-control" id="nm_expense_md8" placeholder="digite a despesa" />
+                        <input type="hidden" id="id_expense_md8" />
+                        <div class="tpt"></div>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" class="form-control" id="description_md8" placeholder="digite a descrição" />
+                </div>
+                <div class="">
+                    <input type="text" class="form-control value" id="val_md8" placeholder="valor" />
+                </div>
+                <div class="flex-center">
+                    <i class="fas fa-sign-in-alt f25 btnNewExpense"></i>
+                </div>
+            </div>
+        </div>
+        <!-- +ADD FORNECEDOR -->
+        <div class="add addSupplier">
+            <div class="grid gridSupplier">
+                <div class="mod">Fornecedor:</div>
+                <div class="select">
+                    <div class="as_expense">
+                        <input type="text" class="form-control" id="nm_expense_md8" placeholder="digite o fornecedor" />
+                        <input type="hidden" id="id_expense_md8" />
+                        <div class="tpt"></div>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" class="form-control value" id="val_md8" placeholder="valor" />
+                </div>
+                <div class="flex-center">
+                    <i class="fas fa-sign-in-alt f25" id="btnNewExpense_md8"></i>
+                </div>
+            </div>
+        </div>
+        <!-- +LISTA -->
+        <div class="scrollbar">
+            <!-- +LISTA DE OS -->
+            <div class="listOs"></div>
+            <!-- +LISTA DE DESPESA -->
+            <div class="listExpense"></div>
+            <!-- +TOTAL -->
+            <div class="total">
+                <div class="txt">
+                    <p>Total:</p>
+                </div>
+                <div class="value">
+                    <input type="text" class="form-control total_value" mask="number" readonly />
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- +RODAPÉ -->
+    <div class="f_footer">
+        <button class="btn btn-group px-5 ms-4 btnExit">Sair</button>
+        <button class="btn btn-group px-5 me-4 btnRestart">Limpar</button>
+        <button class="btn btn-group px-5 me-4 btnSave">Lançar</button>
+    </div>
+</div>

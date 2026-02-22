@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 30px;
+
+    .filter {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+
+        .input-group {
+            .clinicStatus,
+            .userStatus {
+                width: 50px;
+                border: 1px solid var(--colorLight);
+            }
+        }
+    }
+
+    .table-box {
+        overflow-y: auto;
+
+        .table {
+            margin-top: 20px;
+            overflow-y: auto;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+tr {
+    cursor: pointer;
+}
