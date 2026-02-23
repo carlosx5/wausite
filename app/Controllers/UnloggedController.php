@@ -38,31 +38,4 @@ class UnloggedController extends Controller
 
         return $data;
     }
-
-    /** //-RETORNA FETCH EM FORMATO JSON
-     * @param int $status
-     * @param mixed $par2
-     * @return ResponseInterface
-     */
-    public function json($status, $par2 = false)
-    {
-        if ($par2) {
-            if (is_object($par2)) {
-                $par2 = (array) $par2;
-            }
-
-            if (is_array($par2)) {
-                $data = $par2;
-            } else {
-                $data['msg'] = $par2;
-            }
-
-            $data['status'] = $status;
-        } else {
-            $data['status'] = $status;
-            $data['parametro-2'] = $par2;
-        }
-
-        return $this->response->setJSON($data);
-    }
 }

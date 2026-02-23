@@ -1,0 +1,45 @@
+.videoTop {
+    position: relative;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-wau {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 10vw;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        text-align: left;
+        container-type: inline-size;
+
+        h1 {
+            width: 100%;
+            font-size: 6cqi;
+            font-weight: bold;
+
+            b {
+                color: #00d1b2;
+            }
+        }
+    }
+}
