@@ -1,6 +1,7 @@
 .videoTop {
     position: relative;
     font-family: "Inter", sans-serif;
+    overflow: hidden;
     color: #fff;
 
     .overlay {
