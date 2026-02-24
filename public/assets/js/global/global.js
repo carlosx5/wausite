@@ -1,4 +1,4 @@
-const baseURL = location.hostname == "localhost" ? `http://localhost/wausaude/public/` : `https://${location.hostname}/`;
+const baseURL = location.hostname == "localhost" ? `http://localhost/wauclinic/public/` : `https://${location.hostname}/`;
 const jsURL = `${baseURL}assets/js/`;
 
 if (window.innerWidth < 1000) {

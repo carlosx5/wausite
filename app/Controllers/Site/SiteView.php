@@ -9,7 +9,7 @@ class SiteView extends UnloggedController
     public function index()
     {
         $dv = uniqid(); //.dv = data version
-        $data['refresh'] = $dv;
+        $data['version'] = $dv;
         $data['video'] = base_url("dataSistem/videos/videotop01.mp4?v=$dv");
         $data['logo'] = base_url("dataSistem/images/logos/wau/wau300x117_2.webp?v=$dv");
 

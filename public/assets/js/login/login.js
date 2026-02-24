@@ -1,4 +1,4 @@
-const baseURL = location.hostname == "localhost" ? `http://localhost/wausaude/public/` : `https://${location.hostname}/`;
+const baseURL = location.hostname == "localhost" ? `http://localhost/wauclinic/public/` : `https://${location.hostname}/`;
 
 document.addEventListener("DOMContentLoaded", async () => {
     localStorage.clear();

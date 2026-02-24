@@ -37,8 +37,7 @@
     .content02 {
         .myrow {
             flex-direction: column;
-            gap: 20px;
-            border: 1px solid red;
+            gap: 40px !important;
 
             .mycol {
                 width: 100% !important;

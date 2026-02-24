@@ -1,7 +1,7 @@
 .videoTop {
     position: relative;
-    color: #fff;
     font-family: "Inter", sans-serif;
+    color: #fff;
 
     .overlay {
         position: absolute;
@@ -39,6 +39,42 @@
 
             b {
                 color: #00d1b2;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .videoTop {
+        height: 85vh;
+
+        video {
+            height: 100%;
+        }
+
+        .logo-wau {
+            top: 50px;
+            right: 50px;
+            width: 30vw;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            top: 50%;
+            left: 35%;
+            width: 50%;
+
+            h1 {
+                width: 100%;
+                font-size: 12cqi;
+                font-weight: bold;
+
+                b {
+                    color: #00d1b2;
+                }
             }
         }
     }

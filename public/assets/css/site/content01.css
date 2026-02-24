@@ -29,17 +29,25 @@
     }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .content01 {
-        padding: 20px;
-    }
+        .content-box {
+            height: 130px;
+            padding: 0 10px;
 
-    .content01 h2 {
-        font-size: 1.5rem;
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            p {
+                text-align: center;
+                font-size: 0.8rem !important;
+            }
+        }
     }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .content01 {
         padding: 10px;
     }
