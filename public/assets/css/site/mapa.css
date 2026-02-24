@@ -1,4 +1,4 @@
-.content03 {
+.mapa {
     /* height: 600px; */
     padding: 50px 0;
     background-color: #fff;
@@ -47,7 +47,7 @@
 }
 
 @media (max-width: 768px) {
-    .content03 {
+    .mapa {
         padding: 10px 0;
 
         .container {
@@ -77,11 +77,11 @@
 }
 
 /* @media (max-width: 480px) {
-    .content03 {
+    .mapa {
         padding: 10px;
     }
 
-    .content03 h2 {
+    .mapa h2 {
         font-size: 1.2rem;
     }
 } */

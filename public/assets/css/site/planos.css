@@ -1,0 +1,188 @@
+.planos {
+    /* height: 600px; */
+    padding: 50px 0;
+    background-color: #fff;
+    /* border: 1px solid gray; */
+
+    .container {
+        display: flex;
+        gap: 1.5rem;
+        align-items: stretch;
+        justify-content: center;
+
+        .card {
+            background-color: #f8f9fc;
+            border-radius: 1.5rem;
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+
+            /*. Cabeçalho do Cartão (Área Branca) */
+            .card-header {
+                padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+                background-color: #f8f9fc;
+
+                .header-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 1rem;
+                }
+
+                .plan-title {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .plan-title .emoji {
+                    font-size: 1.25rem;
+                }
+
+                .plan-title h2 {
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    color: #00d1b2;
+                }
+
+                .badge-popular {
+                    background-color: #102a43;
+                    color: #00d1b2;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    padding: 0.25rem 0.625rem;
+                    border-radius: 9999px;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                }
+
+                .price-container {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 0.25rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .price-container .amount {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    letter-spacing: -0.025em;
+                    color: #102a43;
+                    line-height: 1;
+                }
+
+                .price-container .period {
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: #6b7280;
+                }
+
+                .billing-link {
+                    display: inline-flex;
+                    align-items: center;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: #6b7280;
+                    text-decoration: none;
+                    margin-bottom: 1.5rem;
+                    transition: color 0.2s ease;
+                }
+
+                .billing-link:hover {
+                    color: #1f2937;
+                }
+
+                .billing-link svg {
+                    margin-left: 0.25rem;
+                    width: 14px;
+                    height: 14px;
+                }
+
+                .target-audience {
+                    font-size: 0.875rem;
+                    color: #6b7280;
+                }
+            }
+
+            /*. Corpo do Cartão (Área Cinza) */
+            .card-body {
+                background-color: #ffffff;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+
+                .features-title {
+                    font-weight: 500;
+                    color: #111827;
+                    margin-bottom: 0.25rem;
+                    font-size: 1rem;
+                }
+
+                .features-subtitle {
+                    font-size: 0.875rem;
+                    color: #6b7280;
+                    margin-bottom: 1.5rem;
+                }
+
+                .features-list {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                        font-size: 0.875rem;
+                        color: #374151;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            /*. Botão e Nota de Rodapé */
+            .action-button {
+                width: 100%;
+                padding: 0.625rem 1rem;
+                background-color: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 0.75rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #374151;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                font-family: inherit;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .planos {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+/* @media (max-width: 480px) {
+    .planos {
+        padding: 10px;
+    }
+
+    .planos h2 {
+        font-size: 1.2rem;
+    }
+} */

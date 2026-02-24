@@ -1,4 +1,4 @@
-.content01 {
+.contentTop {
     background-color: #fff;
 
     .content-box {
@@ -30,7 +30,7 @@
 }
 
 @media (max-width: 768px) {
-    .content01 {
+    .contentTop {
         .content-box {
             height: 130px;
             padding: 0 10px;
@@ -46,13 +46,3 @@
         }
     }
 }
-
-/* @media (max-width: 480px) {
-    .content01 {
-        padding: 10px;
-    }
-
-    .content01 h2 {
-        font-size: 1.2rem;
-    }
-} */

@@ -1,4 +1,4 @@
-.content02 {
+.rowTop {
     /* height: 600px; */
     padding: 100px 0 50px 0;
     background-color: #fff;
@@ -34,7 +34,7 @@
 }
 
 @media (max-width: 768px) {
-    .content02 {
+    .rowTop {
         .myrow {
             flex-direction: column;
             gap: 40px !important;
@@ -45,13 +45,3 @@
         }
     }
 }
-
-/* @media (max-width: 480px) {
-    .content01 {
-        padding: 10px;
-    }
-
-    .content01 h2 {
-        font-size: 1.2rem;
-    }
-} */
