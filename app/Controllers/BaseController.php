@@ -67,9 +67,9 @@ abstract class BaseController extends Controller
 
         date_default_timezone_set('America/Sao_Paulo');
 
-        $this->devmodeOn = $this->checkDevmodeOn();
-        $this->refresh = $this->checkRefresh();
-        $this->modUserStatus = new UserStatus_Model();
+        // $this->devmodeOn = $this->checkDevmodeOn();
+        // $this->refresh = $this->checkRefresh();
+        // $this->modUserStatus = new UserStatus_Model();
     }
 
     //:CHECA REFRESH

@@ -12,14 +12,14 @@ class ViewController extends BaseController
         $this->checkSystemMaintenance();
 
         //:Sem session vai p/ controller de login
-        if (!parent::checkSession()) $this->doLogin();
+        // if (!parent::checkSession()) $this->doLogin();
 
         //:Sem permissão, vai p/ controller de usuário sem permissão
-        $this->CheckPermission($access);
+        // $this->CheckPermission($access);
 
         //:Se usuário não estiver ativo vai p/ tela de login
-        if (!parent::checkStatus())
-            $this->doLogin();
+        // if (!parent::checkStatus())
+        //     $this->doLogin();
 
         return uri_string();
     }

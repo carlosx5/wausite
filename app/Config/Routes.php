@@ -16,3 +16,7 @@ $routes->post('calendarLibraries/find_clinic', 'Calendar\Libraries\Find_clinic::
 $routes->group('calendarRegister', ['namespace' => 'App\Controllers\Calendar\Register'], static function ($routes) {
     $routes->post('getData', 'CalendarRegister::getData');
 });
+
+//:PASTA DO ADMINISTRADOR
+$routes->get('wau-lead', 'Adm\Lead\LeadInput::index');
+$routes->post('wau-lead/send', 'Adm\Lead\LeadInput::send');

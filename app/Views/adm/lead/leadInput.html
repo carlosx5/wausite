@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>WAU Lead - Bem-vindo</title>
+        <meta property="og:title" content="WAU Lead" />
+        <meta property="og:description" content="WAU Lead - Captação Inteligente" />
+
+        <!--+ Bootstrap CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!--+ Google Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <!--+ Font Awesome -->
+        <script src="https://kit.fontawesome.com/222ab7e352.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="<?= base_url('assets/css/adm/lead/leadInput.css') . '?r=' . $refresh ?>" />
+    </head>
+    <body>
+        <!-- Partículas decorativas de fundo -->
+        <div class="particles">
+            <div class="particle" style="--x: 10%; --y: 20%; --size: 6px; --duration: 18s; --delay: 0s"></div>
+            <div class="particle" style="--x: 25%; --y: 60%; --size: 4px; --duration: 22s; --delay: 2s"></div>
+            <div class="particle" style="--x: 50%; --y: 30%; --size: 8px; --duration: 15s; --delay: 1s"></div>
+            <div class="particle" style="--x: 70%; --y: 70%; --size: 5px; --duration: 20s; --delay: 3s"></div>
+            <div class="particle" style="--x: 85%; --y: 40%; --size: 7px; --duration: 17s; --delay: 0.5s"></div>
+            <div class="particle" style="--x: 40%; --y: 80%; --size: 4px; --duration: 25s; --delay: 4s"></div>
+            <div class="particle" style="--x: 60%; --y: 15%; --size: 6px; --duration: 19s; --delay: 1.5s"></div>
+            <div class="particle" style="--x: 90%; --y: 85%; --size: 5px; --duration: 21s; --delay: 2.5s"></div>
+        </div>
+
+        <div class="main">
+            <!-- TELA 1: Boas-vindas -->
+            <div class="welcome-container" id="screenWelcome">
+                <!-- Logo WAU -->
+                <img src="<?= $logo ?>" alt="WAU" class="welcome-logo" />
+
+                <!-- Título principal -->
+                <h1 class="welcome-title">Bem-vindo à <span class="highlight">WAU</span></h1>
+
+                <!-- Subtítulo -->
+                <p class="welcome-subtitle">
+                    Sua jornada de captação inteligente começa aqui.<br />
+                    Estamos prontos para transformar seus resultados!
+                </p>
+
+                <!-- Separador decorativo -->
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <i class="fa-light fa-solid fa-sparkles divider-icon"></i>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Texto de chamada -->
+                <p class="cta-text">Clique no botão abaixo e vamos começar</p>
+
+                <!-- Botão de Começar -->
+                <button class="btn-start" id="btnStart" onclick="startLead()">
+                    <span>Vamos Começar</span>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+                <!-- Rodapé com logo -->
+                <div class="footer-info">
+                    <small>Powered by <strong>WAU Clinic</strong></small>
+                </div>
+            </div>
+
+            <!-- TELA 2: Formulário de Dados -->
+            <div class="form-container" id="screenForm">
+                <!-- Logo WAU -->
+                <img src="<?= $logo ?>" alt="WAU" class="welcome-logo small" />
+
+                <h2 class="form-title">Seus Dados</h2>
+                <p class="form-subtitle">Preencha as informações abaixo para continuar</p>
+
+                <form class="lead-form" id="leadForm" onsubmit="return submitLead(event);">
+                    <!-- Nome -->
+                    <div class="form-group">
+                        <label for="leadName">
+                            <i class="fa-light fa-solid fa-user"></i>
+                            Nome completo
+                        </label>
+                        <input type="text" id="leadName" placeholder="Digite seu nome" required autocomplete="name" />
+                    </div>
+
+                    <!-- Celular -->
+                    <div class="form-group">
+                        <label for="leadPhone">
+                            <i class="fa-light fa-solid fa-mobile"></i>
+                            Celular
+                        </label>
+                        <input type="tel" id="leadPhone" placeholder="(00) 00000-0000" required autocomplete="tel" />
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="form-group">
+                        <label for="leadEmail">
+                            <i class="fa-light fa-solid fa-envelope"></i>
+                            E-mail
+                        </label>
+                        <input
+                            type="email"
+                            id="leadEmail"
+                            placeholder="seuemail@exemplo.com"
+                            required
+                            autocomplete="email"
+                        />
+                    </div>
+
+                    <!-- Botão Enviar -->
+                    <button type="submit" class="btn-start" id="btnSubmit">
+                        <span>Enviar</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <!-- Rodapé -->
+                <div class="footer-info">
+                    <small>Powered by <strong>WAU Clinic</strong></small>
+                </div>
+            </div>
+
+            <!-- TELA 3: Sucesso (mobile) -->
+            <div class="welcome-container" id="screenSuccess" style="display: none">
+                <!-- Logo WAU -->
+                <img src="<?= $logo ?>" alt="WAU" class="welcome-logo" />
+
+                <div style="margin-top: 2rem">
+                    <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #4ade80; margin-bottom: 1.5rem"></i>
+                </div>
+
+                <h1 class="welcome-title" style="font-size: 1.6rem">Tudo certo! <span class="highlight">🎉</span></h1>
+
+                <p class="welcome-subtitle" style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.7">
+                    Enviamos uma mensagem para seu <strong>WhatsApp</strong> e <strong>e-mail</strong> com o link para
+                    acessar o sistema através do seu computador.<br /><br />
+                    <strong>Nos vemos por lá!</strong>
+                </p>
+
+                <!-- Separador decorativo -->
+                <div class="divider" style="margin-top: 2rem">
+                    <span class="divider-line"></span>
+                    <i class="fa-light fa-solid fa-sparkles divider-icon"></i>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Rodapé -->
+                <div class="footer-info">
+                    <small>Powered by <strong>WAU Clinic</strong></small>
+                </div>
+            </div>
+        </div>
+
+        <!--+ Bootstrap JS Bundle -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            function startLead() {
+                const btn = document.getElementById("btnStart");
+                btn.classList.add("clicked");
+                btn.innerHTML = '<i class="fa-light fa-solid fa-spinner-third fa-spin"></i> <span>Carregando...</span>';
+
+                const screenWelcome = document.getElementById("screenWelcome");
+                const screenForm = document.getElementById("screenForm");
+
+                // Fade out da tela de boas-vindas
+                setTimeout(() => {
+                    screenWelcome.classList.add("fade-out");
+
+                    // Após a animação de saída, mostra o formulário
+                    setTimeout(() => {
+                        screenWelcome.style.display = "none";
+                        screenForm.classList.add("active");
+                    }, 600);
+                }, 800);
+            }
+
+            // Máscara de telefone
+            document.getElementById("leadPhone").addEventListener("input", function (e) {
+                let v = e.target.value.replace(/\D/g, "");
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 6) {
+                    v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+                } else if (v.length > 2) {
+                    v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+                } else if (v.length > 0) {
+                    v = `(${v}`;
+                }
+                e.target.value = v;
+            });
+
+            function submitLead(event) {
+                event.preventDefault();
+
+                const btn = document.getElementById("btnSubmit");
+                btn.classList.add("clicked");
+                btn.innerHTML = '<i class="fa-light fa-solid fa-spinner-third fa-spin"></i> <span>Enviando...</span>';
+
+                const formData = new FormData();
+                formData.append("<?= csrf_token() ?>", "<?= csrf_hash() ?>");
+                formData.append("name", document.getElementById("leadName").value);
+                formData.append("phone", document.getElementById("leadPhone").value);
+                formData.append("email", document.getElementById("leadEmail").value);
+
+                fetch("<?= base_url('wau-lead/send') ?>", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        const isMobile = window.innerWidth <= 768;
+
+                        if (isMobile) {
+                            // Mobile: transição suave para tela de sucesso
+                            const screenForm = document.getElementById("screenForm");
+                            const screenSuccess = document.getElementById("screenSuccess");
+
+                            screenForm.classList.add("fade-out");
+
+                            setTimeout(() => {
+                                screenForm.style.display = "none";
+                                screenSuccess.style.display = "flex";
+                                screenSuccess.classList.add("active");
+                            }, 600);
+                        } else {
+                            // Desktop: redireciona para wausaude.com.br
+                            window.location.href = "https://wausaude.com.br";
+                        }
+                    })
+                    .catch((err) => {
+                        alert("Erro ao enviar. Tente novamente.");
+                        btn.classList.remove("clicked");
+                        btn.innerHTML = '<span>Enviar</span> <i class="fa-solid fa-paper-plane"></i>';
+                    });
+
+                return false;
+            }
+        </script>
+    </body>
+</html>
