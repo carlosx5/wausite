@@ -20,9 +20,10 @@ class LeadInput extends ViewController
     public function send()
     {
         $data = [
-            'name'  => $this->request->getPost('name'),
-            'phone' => $this->request->getPost('phone'),
-            'email' => $this->request->getPost('email'),
+            'name'     => $this->request->getPost('name'),
+            'phone'    => $this->request->getPost('phone'),
+            'email'    => $this->request->getPost('email'),
+            'isMobile' => $this->request->getPost('isMobile'),
         ];
 
         $url = ($_SERVER['HTTP_HOST'] === 'localhost')

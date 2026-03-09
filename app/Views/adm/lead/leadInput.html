@@ -153,6 +153,46 @@
                     <small>Powered by <strong>WAU Clinic</strong></small>
                 </div>
             </div>
+
+            <!-- TELA 4: Sucesso (desktop) -->
+            <div class="welcome-container" id="screenSuccessDesktop" style="display: none">
+                <!-- Logo WAU -->
+                <img src="<?= $logo ?>" alt="WAU" class="welcome-logo" />
+
+                <div style="margin-top: 2rem">
+                    <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #4ade80; margin-bottom: 1.5rem"></i>
+                </div>
+
+                <h1 class="welcome-title" style="font-size: 1.6rem">Tudo certo! <span class="highlight">🎉</span></h1>
+
+                <p class="welcome-subtitle" style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.7">
+                    O próximo passo é fazer o login no sistema.<br /><br />
+                    Como você ainda não tem uma senha cadastrada, preencha o campo com o seu <strong>e-mail</strong> e clique
+                    abaixo em <strong>"Criar nova senha"</strong>.
+                </p>
+
+                <!-- Botão para ir ao login -->
+                <a
+                    href="https://wausaude.com.br"
+                    class="btn-start"
+                    style="margin-top: 2rem; text-decoration: none; display: inline-flex"
+                >
+                    <span>Ir para o Login</span>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+
+                <!-- Separador decorativo -->
+                <div class="divider" style="margin-top: 2rem">
+                    <span class="divider-line"></span>
+                    <i class="fa-light fa-solid fa-sparkles divider-icon"></i>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Rodapé -->
+                <div class="footer-info">
+                    <small>Powered by <strong>WAU Clinic</strong></small>
+                </div>
+            </div>
         </div>
 
         <!--+ Bootstrap JS Bundle -->
@@ -208,6 +248,9 @@
                 formData.append("name", document.getElementById("leadName").value);
                 formData.append("phone", document.getElementById("leadPhone").value);
                 formData.append("email", document.getElementById("leadEmail").value);
+                formData.append("isMobile", window.innerWidth <= 768 ? 1 : 0);
+
+                console.log(formData);
 
                 fetch("<?= base_url('wau-lead/send') ?>", {
                     method: "POST",
@@ -215,6 +258,7 @@
                 })
                     .then((res) => res.json())
                     .then((data) => {
+                        console.log(data);
                         const isMobile = window.innerWidth <= 768;
 
                         if (isMobile) {
@@ -230,8 +274,17 @@
                                 screenSuccess.classList.add("active");
                             }, 600);
                         } else {
-                            // Desktop: redireciona para wausaude.com.br
-                            window.location.href = "https://wausaude.com.br";
+                            // Desktop: transição suave para tela de sucesso desktop
+                            const screenForm = document.getElementById("screenForm");
+                            const screenSuccessDesktop = document.getElementById("screenSuccessDesktop");
+
+                            screenForm.classList.add("fade-out");
+
+                            setTimeout(() => {
+                                screenForm.style.display = "none";
+                                screenSuccessDesktop.style.display = "flex";
+                                screenSuccessDesktop.classList.add("active");
+                            }, 600);
                         }
                     })
                     .catch((err) => {
