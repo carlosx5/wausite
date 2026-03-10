@@ -20,3 +20,4 @@ $routes->group('calendarRegister', ['namespace' => 'App\Controllers\Calendar\Reg
 //:PASTA DO ADMINISTRADOR
 $routes->get('wau-lead', 'Adm\Lead\LeadInput::index');
 $routes->post('wau-lead/send', 'Adm\Lead\LeadInput::send');
+$routes->get('wau-register/(:any)', 'Adm\Register\SignUp::index/$1');
