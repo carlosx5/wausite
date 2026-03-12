@@ -18,6 +18,17 @@ function startLead() {
     }, 800);
 }
 
+//:Capitalizar nome (primeira letra de cada palavra em maiúsculo)
+document.getElementById("leadName").addEventListener("input", function (e) {
+    let words = e.target.value.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > 0) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+    }
+    e.target.value = words.join(" ");
+});
+
 //:Máscara de telefone
 document.getElementById("leadPhone").addEventListener("input", function (e) {
     let v = e.target.value.replace(/\D/g, "");
@@ -30,6 +41,13 @@ document.getElementById("leadPhone").addEventListener("input", function (e) {
         v = `(${v}`;
     }
     e.target.value = v;
+});
+
+//:Forçar minúsculo nos e-mails
+document.querySelectorAll('input[type="email"]').forEach((input) => {
+    input.addEventListener("input", function (e) {
+        e.target.value = e.target.value.toLowerCase();
+    });
 });
 
 function submitLead(event) {

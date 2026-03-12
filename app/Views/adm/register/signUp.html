@@ -65,7 +65,12 @@
                     <div class="step-line" id="stepLine2"></div>
                     <div class="step" id="stepIndicator3">
                         <div class="step-number">3</div>
-                        <span>Pagamento</span>
+                        <span>Senha</span>
+                    </div>
+                    <div class="step-line" id="stepLine3"></div>
+                    <div class="step" id="stepIndicator4">
+                        <div class="step-number">4</div>
+                        <span>Financeiro</span>
                     </div>
                 </div>
 
@@ -103,7 +108,7 @@
                             <input
                                 type="tel"
                                 id="signupPhone"
-                                placeholder="(00) 00000-0000"
+                                placeholder="00 00000-0000"
                                 required
                                 autocomplete="tel"
                                 value="<?= $signupPhone ?>"
@@ -134,7 +139,7 @@
                                 <i class="fa-light fa-id-card"></i>
                                 RG
                             </label>
-                            <input type="text" id="signupRg" placeholder="Digite seu RG" required value="17.185.072" />
+                            <input type="text" id="signupRg" placeholder="Digite seu RG" required />
                         </div>
 
                         <!-- CPF -->
@@ -143,7 +148,7 @@
                                 <i class="fa-light fa-fingerprint"></i>
                                 CPF
                             </label>
-                            <input type="text" id="signupCpf" placeholder="000.000.000-00" required value="082.151.418-03" />
+                            <input type="text" id="signupCpf" placeholder="000.000.000-00" required />
                         </div>
 
                         <button type="button" class="btn-start" onclick="nextStep(2)">
@@ -188,6 +193,7 @@
                                 required
                                 value="Instituto Alnnor Habben"
                             />
+                            <small class="form-hint">Digite o nome que você deseja que apareça para seus pacientes.</small>
                         </div>
 
                         <!-- CNPJ -->
@@ -196,7 +202,8 @@
                                 <i class="fa-light fa-file-contract"></i>
                                 CNPJ
                             </label>
-                            <input type="text" id="signupCnpj" placeholder="00.000.000/0000-00" value="11.222.333/0001-44" />
+                            <input type="text" id="signupCnpj" placeholder="00.000.000/0000-00" />
+                            <small class="form-hint">CNPJ não é obrigatório nesse momento.</small>
                         </div>
 
                         <!-- CEP -->
@@ -209,16 +216,15 @@
                         </div>
 
                         <!-- Endereço -->
-                        <div class="form-group">
-                            <label for="signupEndereco">
-                                <i class="fa-light fa-location-dot"></i>
-                                Endereço
-                            </label>
-                            <input type="text" id="signupEndereco" placeholder="Rua, número, complemento" required />
-                        </div>
-
-                        <!-- Numero e Complemento -->
                         <div class="form-row">
+                            <div class="form-group flex-3">
+                                <label for="signupEndereco">
+                                    <i class="fa-light fa-location-dot"></i>
+                                    Endereço
+                                </label>
+                                <input type="text" id="signupEndereco" placeholder="Rua, número, complemento" required />
+                            </div>
+
                             <div class="form-group flex-1">
                                 <label for="signupNumero">
                                     <i class="fa-light fa-city"></i>
@@ -226,13 +232,24 @@
                                 </label>
                                 <input type="text" id="signupNumero" required />
                             </div>
+                        </div>
 
-                            <div class="form-group flex-3">
+                        <!-- Numero e Complemento -->
+                        <div class="form-row">
+                            <div class="form-group flex-2">
                                 <label for="signupComplemento">
                                     <i class="fa-light fa-map"></i>
                                     Complemento
                                 </label>
                                 <input type="text" id="signupComplemento" placeholder="Conj. 001" />
+                            </div>
+
+                            <div class="form-group flex-3">
+                                <label for="signupBairro">
+                                    <i class="fa-light fa-city"></i>
+                                    Bairro
+                                </label>
+                                <input type="text" id="signupBairro" required />
                             </div>
                         </div>
 
@@ -267,8 +284,89 @@
                         </div>
                     </div>
 
-                    <!-- ===== ETAPA 3: Dados para Pagamento ===== -->
+                    <!-- ===== ETAPA 3: Senha ===== -->
                     <div class="form-step" id="step3">
+                        <h3 class="section-title">
+                            <i class="fa-light fa-lock"></i>
+                            Criar Senha
+                        </h3>
+
+                        <!-- Senha -->
+                        <div class="form-group">
+                            <label for="signupPassword">
+                                <i class="fa-light fa-key"></i>
+                                Senha
+                            </label>
+                            <div class="input-password-wrapper">
+                                <input
+                                    type="password"
+                                    id="signupPassword"
+                                    placeholder="Digite sua senha"
+                                    required
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                />
+                                <button
+                                    type="button"
+                                    class="btn-toggle-password"
+                                    onclick="togglePassword('signupPassword', this)"
+                                >
+                                    <i class="fa-light fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="box-validate">
+                                <p id="checkLetter">- Precisa ter pelo menos 1 letra</p>
+                                <p id="checkNumber">- Precisa ter pelo menos 1 número</p>
+                                <p id="checkLength">- Precisa ter pelo menos 8 dígitos</p>
+                            </div>
+                        </div>
+
+                        <!-- Confirmar Senha -->
+                        <div class="form-group">
+                            <label for="signupPasswordConfirm">
+                                <i class="fa-light fa-key"></i>
+                                Confirmar Senha
+                            </label>
+                            <div class="input-password-wrapper">
+                                <input
+                                    type="password"
+                                    id="signupPasswordConfirm"
+                                    placeholder="Confirme sua senha"
+                                    required
+                                    autocomplete="new-password"
+                                />
+                                <button
+                                    type="button"
+                                    class="btn-toggle-password"
+                                    onclick="togglePassword('signupPasswordConfirm', this)"
+                                >
+                                    <i class="fa-light fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="box-validate">
+                                <p id="checkEqual">- As senhas precisam ser iguais</p>
+                            </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="prevStep(2)">
+                                <i class="fa-light fa-arrow-left-long"></i>
+                                <span>Voltar</span>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn-start btn-password-next"
+                                id="btnPasswordNext"
+                                onclick="nextStep(4)"
+                            >
+                                <span>Próximo</span>
+                                <i class="fa-light fa-arrow-right-long"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ===== ETAPA 4: Dados para Financeiro ===== -->
+                    <div class="form-step" id="step4">
                         <h3 class="section-title">
                             <i class="fa-light fa-credit-card"></i>
                             Dados para Pagamento
@@ -283,10 +381,12 @@
                             <input
                                 type="tel"
                                 id="signupPayPhone"
-                                placeholder="(00) 00000-0000"
+                                value="<?php echo $signupPayPhone; ?>"
+                                placeholder="00 00000-0000"
                                 required
                                 autocomplete="tel"
                             />
+                            <small class="form-hint">Digite o celular para quem enviaremos as notificações.</small>
                         </div>
 
                         <!-- E-mail para pagamento -->
@@ -298,14 +398,16 @@
                             <input
                                 type="email"
                                 id="signupPayEmail"
+                                value="<?php echo $signupPayEmail; ?>"
                                 placeholder="email@pagamento.com"
                                 required
                                 autocomplete="email"
                             />
+                            <small class="form-hint">Digite o e-mail para quem enviaremos as notificações.</small>
                         </div>
 
                         <div class="btn-row">
-                            <button type="button" class="btn-back" onclick="prevStep(2)">
+                            <button type="button" class="btn-back" onclick="prevStep(3)">
                                 <i class="fa-light fa-arrow-left-long"></i>
                                 <span>Voltar</span>
                             </button>

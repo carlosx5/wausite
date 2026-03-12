@@ -28,6 +28,7 @@ class LeadInput extends ViewController
             'phone'         => $this->request->getPost('phone'),
             'email'         => $this->request->getPost('email'),
             'isMobile'      => $this->request->getPost('isMobile'),
+            'clinicMainId'  => "0",
             'isLocalhost'   => $_SERVER['HTTP_HOST'] === 'localhost' ? 1 : 0,
         ];
 

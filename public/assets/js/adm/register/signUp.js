@@ -37,6 +37,11 @@ function nextStep(step) {
 
     if (!valid) return;
 
+    //:Validar senhas na etapa 3
+    if (currentStep === 3) {
+        if (!passValidation.checkd1 || !passValidation.checkd2) return;
+    }
+
     //:Esconder etapa atual e mostrar próxima
     document.getElementById("step" + currentStep).classList.remove("active");
     document.getElementById("step" + step).classList.add("active");
@@ -82,11 +87,9 @@ function applyPhoneMask(input) {
         let v = e.target.value.replace(/\D/g, "");
         if (v.length > 11) v = v.slice(0, 11);
         if (v.length > 6) {
-            v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+            v = `${v.slice(0, 2)} ${v.slice(2, 7)}-${v.slice(7)}`;
         } else if (v.length > 2) {
-            v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
-        } else if (v.length > 0) {
-            v = `(${v}`;
+            v = `${v.slice(0, 2)} ${v.slice(2)}`;
         }
         e.target.value = v;
     });
@@ -138,12 +141,76 @@ function applyCepMask(input) {
     });
 }
 
+//:Forçar minúsculo em campos de e-mail
+function applyEmailLowercase(input) {
+    if (!input) return;
+    input.addEventListener("input", function (e) {
+        e.target.value = e.target.value.toLowerCase();
+    });
+}
+
 //:Aplicar máscaras ao carregar a página
 applyPhoneMask(document.getElementById("signupPhone"));
 applyPhoneMask(document.getElementById("signupPayPhone"));
 applyCpfMask(document.getElementById("signupCpf"));
 applyCnpjMask(document.getElementById("signupCnpj"));
 applyCepMask(document.getElementById("signupCep"));
+
+//:Aplicar minúsculo nos e-mails
+document.querySelectorAll('input[type="email"]').forEach(applyEmailLowercase);
+
+//:Toggle visibilidade da senha
+function togglePassword(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const icon = btn.querySelector("i");
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+
+//:Validação de senha em tempo real
+const passValidation = {
+    checkd1: false,
+    checkd2: false,
+};
+
+function validatePassword() {
+    const pass1 = document.getElementById("signupPassword").value;
+    const pass2 = document.getElementById("signupPasswordConfirm").value;
+
+    //:Mínimo de 1 letra
+    const hasLetter = /[a-zA-Z]/.test(pass1);
+    document.getElementById("checkLetter").classList.toggle("validate", hasLetter);
+
+    //:Mínimo de 1 número
+    const hasNumber = /\d/.test(pass1);
+    document.getElementById("checkNumber").classList.toggle("validate", hasNumber);
+
+    //:Mínimo de 8 caracteres
+    const hasLength = pass1.length >= 8;
+    document.getElementById("checkLength").classList.toggle("validate", hasLength);
+
+    passValidation.checkd1 = hasLetter && hasNumber && hasLength;
+
+    //:Senhas iguais
+    const isEqual = pass1 && pass2 && pass1 === pass2;
+    document.getElementById("checkEqual").classList.toggle("validate", isEqual);
+
+    passValidation.checkd2 = isEqual;
+
+    //:Atualizar cor do botão Próximo
+    const btnNext = document.getElementById("btnPasswordNext");
+    btnNext.classList.toggle("valid", passValidation.checkd1 && passValidation.checkd2);
+}
+
+document.getElementById("signupPassword").addEventListener("keyup", validatePassword);
+document.getElementById("signupPasswordConfirm").addEventListener("keyup", validatePassword);
 
 //:Busca endereço pelo CEP (ViaCEP)
 document.getElementById("signupCep").addEventListener("change", async function () {
@@ -161,6 +228,7 @@ document.getElementById("signupCep").addEventListener("change", async function (
 
         this.style.borderColor = "";
         document.getElementById("signupEndereco").value = data.logradouro || "";
+        document.getElementById("signupBairro").value = data.bairro || "";
         document.getElementById("signupCidade").value = data.localidade || "";
         document.getElementById("signupEstado").value = data.uf || "";
     } catch (err) {
@@ -173,31 +241,50 @@ function submitSignUp(event) {
     event.preventDefault();
 
     const btn = document.getElementById("btnSubmitSignUp");
-    btn.classList.add("clicked");
+    //!!btn.classList.add("clicked");
     btn.innerHTML = '<i class="fa-light fa-solid fa-spinner-third fa-spin"></i> <span>Enviando...</span>';
 
     const formData = new FormData();
     formData.append(CSRF_TOKEN, CSRF_HASH);
 
     //:Dados Pessoais
-    formData.append("name", document.getElementById("signupName").value);
-    formData.append("phone", document.getElementById("signupPhone").value);
-    formData.append("email", document.getElementById("signupEmail").value);
-    formData.append("rg", document.getElementById("signupRg").value);
-    formData.append("cpf", document.getElementById("signupCpf").value);
+    const userData = {
+        name: document.getElementById("signupName").value,
+        phone_number: document.getElementById("signupPhone").value,
+        email: document.getElementById("signupEmail").value,
+        rg: document.getElementById("signupRg").value,
+        cpf: document.getElementById("signupCpf").value,
+    };
 
     //:Dados da Clínica
-    formData.append("razao_social", document.getElementById("signupRazaoSocial").value);
-    formData.append("nome_fantasia", document.getElementById("signupNomeFantasia").value);
-    formData.append("cnpj", document.getElementById("signupCnpj").value);
-    formData.append("endereco", document.getElementById("signupEndereco").value);
-    formData.append("cidade", document.getElementById("signupCidade").value);
-    formData.append("estado", document.getElementById("signupEstado").value);
-    formData.append("cep", document.getElementById("signupCep").value);
+    const clinicData = {
+        name_corporate: document.getElementById("signupRazaoSocial").value,
+        name_trading: document.getElementById("signupNomeFantasia").value,
+        cnpj: document.getElementById("signupCnpj").value,
+        address: document.getElementById("signupEndereco").value,
+        address_number: document.getElementById("signupNumero").value,
+        address_complement: document.getElementById("signupComplemento").value,
+        address_neighb: document.getElementById("signupBairro").value,
+        address_city: document.getElementById("signupCidade").value,
+        address_state: document.getElementById("signupEstado").value,
+        address_zip: document.getElementById("signupCep").value,
+    };
+
+    //:Senha
+    const passwordData = {
+        password: document.getElementById("signupPassword").value,
+    };
 
     //:Dados para Pagamento
-    formData.append("pay_phone", document.getElementById("signupPayPhone").value);
-    formData.append("pay_email", document.getElementById("signupPayEmail").value);
+    const payData = {
+        pay_phoneNumber: document.getElementById("signupPayPhone").value,
+        pay_email: document.getElementById("signupPayEmail").value,
+    };
+
+    formData.append("userData", JSON.stringify(userData));
+    formData.append("clinicData", JSON.stringify(clinicData));
+    formData.append("passwordData", JSON.stringify(passwordData));
+    formData.append("payData", JSON.stringify(payData));
 
     fetch(SIGNUP_URL, {
         method: "POST",

@@ -271,6 +271,10 @@ body {
     backdrop-filter: blur(8px);
 }
 
+.form-group input[type="email"] {
+    text-transform: lowercase;
+}
+
 .form-group select {
     cursor: pointer;
     appearance: none;
@@ -293,6 +297,77 @@ body {
     box-shadow:
         0 0 20px rgba(0, 209, 178, 0.15),
         0 0 0 3px rgba(0, 209, 178, 0.1);
+}
+
+/* ===== Campo de Senha com Toggle ===== */
+.input-password-wrapper {
+    position: relative;
+}
+
+.input-password-wrapper input::-ms-reveal,
+.input-password-wrapper input::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+.input-password-wrapper input {
+    padding-right: 3rem;
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    padding: 0.3rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.btn-toggle-password:hover {
+    opacity: 1;
+}
+
+/* ===== Regras de Validação de Senha ===== */
+.box-validate {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.box-validate p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+    color: orange;
+    transition: color 0.3s ease;
+}
+
+.box-validate p.validate {
+    color: green;
+}
+
+/* ===== Botão Próximo da etapa Senha ===== */
+.btn-password-next {
+    background: linear-gradient(135deg, #f59e0b, #f97316) !important;
+    box-shadow: 0 4px 25px rgba(245, 158, 11, 0.4), 0 0 60px rgba(245, 158, 11, 0.1) !important;
+    transition: all 0.4s ease !important;
+}
+
+.btn-password-next:hover {
+    box-shadow: 0 8px 35px rgba(245, 158, 11, 0.5), 0 0 80px rgba(245, 158, 11, 0.15) !important;
+}
+
+.btn-password-next.valid {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    box-shadow: 0 4px 25px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.1) !important;
+}
+
+.btn-password-next.valid:hover {
+    box-shadow: 0 8px 35px rgba(16, 185, 129, 0.5), 0 0 80px rgba(16, 185, 129, 0.15) !important;
 }
 
 /* ===== Linha de campos lado a lado ===== */

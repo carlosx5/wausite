@@ -408,6 +408,10 @@ body {
     backdrop-filter: blur(8px);
 }
 
+.form-group input[type="email"] {
+    text-transform: lowercase;
+}
+
 .form-group input::placeholder {
     color: rgba(196, 181, 253, 0.35);
 }
